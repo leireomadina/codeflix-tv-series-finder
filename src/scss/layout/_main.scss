@@ -1,0 +1,15 @@
+.main {
+  display: flex;
+}
+
+.shows-list {
+  &__item {
+    background-color: lightgreen;
+    margin-bottom: 20px;
+  }
+}
+
+.favorites-section {
+  margin-left: 20px;
+  background-color: lightskyblue;
+}
