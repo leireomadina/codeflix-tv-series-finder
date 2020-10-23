@@ -6,6 +6,11 @@
   &__item {
     background-color: lightgreen;
     margin-bottom: 20px;
+
+    //clase de favoritos a añadir en JS
+    &--favorite {
+      background-color: red;
+    }
   }
 }
 
@@ -15,6 +20,7 @@
 }
 
 //clase de favoritos a añadir en JS
-.favorites--selected {
-  background-color: red;
-}
+// .favorites--selected {
+//   background-color: red;
+// }
+
