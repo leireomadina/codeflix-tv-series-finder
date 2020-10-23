@@ -18,14 +18,16 @@ Pasos a seguir:
     - [x] Contenido dinámico mediante JS: pintar varias series
     - [x] Imagen de error cuando no exista en la base de datos
 - [X] Darle estilos mínimos en CSS
-- [ ] Sección favoritos
-    - [x] HTML de la sección favoritos
-    - [x] Maquetación mínima con CSS de la sección de favoritos
-    - [x] Escuchar el evento en cada ficha
+- [x] Añadir y quitar favoritos de series
+    - [x] Escuchar el evento en cada serie de tv
     - [x] Identificar el elemento seleccionado
     - [x] Guardar los favoritos en un array
-    - [ ] Añadir la clase de favorito
-    - [ ] Quitar la clase de favorito
+    - [x] Añadir la clase de favorito
+    - [x] Quitar la clase de favorito
+- [ ] Sección favoritos: pintar
+    - [x] HTML de la sección favoritos
+    - [x] Maquetación mínima con CSS de la sección de favoritos
+    - [ ] Pintar series favoritas en nueva sección de manera dinámica (JS)
 - [ ] Cachear las series favoritas en localStorage
     - [ ] 
 - [ ] Estilos CSS
