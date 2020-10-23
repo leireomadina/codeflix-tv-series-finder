@@ -17,6 +17,7 @@ function getData() {
       searchedShows = data;
       // console.log(searchedShows);
       paintShows();
+      listenShows();
     });
 }
 

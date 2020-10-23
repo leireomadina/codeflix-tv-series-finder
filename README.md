@@ -17,14 +17,20 @@ Pasos a seguir:
     - [x] Crear HTML de guía (provisional)
     - [x] Contenido dinámico mediante JS: pintar varias series
     - [x] Imagen de error cuando no exista en la base de datos
-- [ ] Darle estilos mínimos en CSS
-- [ ] Sección favoritas
-    - [ ] HTML de la sección favoritas
-    - [ ] Maquetación mínima con CSS de la sección de favoritas
-    - [ ] Marcar la serie seleccionada por la usuaria como favorita: añadir
-    - [ ] Quitar series de la lista de favoritas
-    - [ ] Cachear las series favoritas en localStorage
+- [X] Darle estilos mínimos en CSS
+- [ ] Sección favoritos
+    - [x] HTML de la sección favoritos
+    - [x] Maquetación mínima con CSS de la sección de favoritos
+    - [x] Escuchar el evento en cada ficha
+    - [x] Identificar el elemento seleccionado
+    - [x] Guardar los favoritos en un array
+    - [ ] Añadir la clase de favorito
+    - [ ] Quitar la clase de favorito
+- [ ] Cachear las series favoritas en localStorage
+    - [ ] 
 - [ ] Estilos CSS
+  - [ ] Sección favoritos en parte izquierda pantalla
+  - [ ] Estilos generales
 - [ ] Refractorizar código final
 - [ ] Limpiar código final
 - [ ] Completar y terminar readme.md
