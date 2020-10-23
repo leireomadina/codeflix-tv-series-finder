@@ -16,6 +16,7 @@ Pasos a seguir:
 - [x] Pintar series en HTML
     - [x] Crear HTML de guía (provisional)
     - [x] Contenido dinámico mediante JS: pintar varias series
+    - [x] Imagen de error cuando no exista en la base de datos
 - [ ] Darle estilos mínimos en CSS
 - [ ] Sección favoritas
     - [ ] HTML de la sección favoritas

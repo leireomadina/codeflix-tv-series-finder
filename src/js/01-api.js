@@ -13,15 +13,15 @@ let searchedShows = [];
 function getData() {
   const userSearch = searchInput.value;
   fetch(`http://api.tvmaze.com/search/shows?q=${userSearch}`)
-  .then(function(response) {
-    // console.log(response);
-    return response.json();
-  })
-  .then(function(data){
-    searchedShows = data;
-    console.log(searchedShows);
-    paintShows();
-  })
+    .then(function (response) {
+      // console.log(response);
+      return response.json();
+    })
+    .then(function (data) {
+      searchedShows = data;
+      console.log(searchedShows);
+      paintShows();
+    });
 }
 
 // Paint function
@@ -35,10 +35,19 @@ function paintShows() {
     //MEJORA: usar DOM avanzado
     // console.log(searchedShows[i].show.name);
     // console.log(searchedShows[i].show.image.medium);
+    // let showImage = searchedShows[i].show.image.medium;
+    let showName = searchedShows[i].show.name;
+    // let imgURL ="";
     htmlShow += `<li style="background-color: #ccc" class="shows-list__item" id="${i}">`;
-    htmlShow += `<img src="${searchedShows[i].show.image.medium}" alt="Imagen de la serie ${searchedShows[i].show.name}" style="height: 200px" class="shows-list__img" title="Imagen de la serie ${searchedShows[i].show.name}"></img>`;
-    htmlShow += `<h2 class="shows-list__title">${searchedShows[i].show.name}</h2>`;
+    htmlShow += `<h2 class="shows-list__title">${showName}</h2>`;
     htmlShow += `</li>`;
+    if (searchedShows[i].show.image != null) {
+      console.log("No tiene foto :(");
+      htmlShow += `<img src="${searchedShows[i].show.image.medium}" alt="Imagen de la serie ${showName}" style="height: 200px" class="shows-list__img" title="Imagen de la serie ${showName}"></img>`;
+    } else {
+      const errorImageURL = "https://via.placeholder.com/210x295/ffffff/666666/?";
+      htmlShow += `<img src="${errorImageURL}" alt="Imagen de la serie ${showName}" style="height: 200px" class="shows-list__img`;
+    }
   }
   showsContainer.innerHTML = htmlShow;
 }
