@@ -13,11 +13,10 @@ Pasos a seguir:
   - [x] Fetch: obtener datos del server
   - [x] Parsear: adaptar/transformar los datos del server
   - [x] Buscar series por el nombre
-- [ ] Pintar 1 serie en HTML
-    - [ ] Crear HTML de guía (provisional)
-    - [ ] Contenido dinámico mediante JS
+- [x] Pintar series en HTML
+    - [x] Crear HTML de guía (provisional)
+    - [x] Contenido dinámico mediante JS: pintar varias series
 - [ ] Darle estilos mínimos en CSS
-- [ ] Pintar varias series
 - [ ] Sección favoritas
     - [ ] HTML de la sección favoritas
     - [ ] Maquetación mínima con CSS de la sección de favoritas

@@ -27,13 +27,20 @@ function getData() {
 // Paint function
 
 function paintShows() {
+  let htmlShow = "";
+  // let showItem = {};
   //loop to get the name and img of each show
   for (let i = 0; i < searchedShows.length; i++) {
-    // searchedShows = data;
-    // console.log(searchedShows);
-    console.log(searchedShows[i].show.name);
-    console.log(searchedShows[i].show.image.medium);
+    //POSIBLE MEJORA: crear un objeto vacío??????
+    //MEJORA: usar DOM avanzado
+    // console.log(searchedShows[i].show.name);
+    // console.log(searchedShows[i].show.image.medium);
+    htmlShow += `<li style="background-color: #ccc" class="shows-list__item" id="${i}">`;
+    htmlShow += `<img src="${searchedShows[i].show.image.medium}" alt="Imagen de la serie ${searchedShows[i].show.name}" style="height: 200px" class="shows-list__img" title="Imagen de la serie ${searchedShows[i].show.name}"></img>`;
+    htmlShow += `<h2 class="shows-list__title">${searchedShows[i].show.name}</h2>`;
+    htmlShow += `</li>`;
   }
+  showsContainer.innerHTML = htmlShow;
 }
 
 // Event listener and function calling
