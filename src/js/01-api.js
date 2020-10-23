@@ -6,20 +6,17 @@ const searchInput = document.querySelector(".js-search");
 const showsContainer = document.querySelector(".js-shows-container");
 const btn = document.querySelector(".js-btn");
 let searchedShows = [];
-//add variable to store API base url?
 
 // Fetch function
 
 function getData() {
+  const apiBaseUrl = "http://api.tvmaze.com/search/shows?q=";
   const userSearch = searchInput.value;
-  fetch(`http://api.tvmaze.com/search/shows?q=${userSearch}`)
-    .then(function (response) {
-      // console.log(response);
-      return response.json();
-    })
+  fetch(`${apiBaseUrl} + ${userSearch}`)
+    .then((response) => response.json())
     .then(function (data) {
       searchedShows = data;
-      console.log(searchedShows);
+      // console.log(searchedShows);
       paintShows();
     });
 }
@@ -36,17 +33,17 @@ function paintShows() {
     // console.log(searchedShows[i].show.name);
     // console.log(searchedShows[i].show.image.medium);
     // let showImage = searchedShows[i].show.image.medium;
-    let showName = searchedShows[i].show.name;
-    // let imgURL ="";
+    const showName = searchedShows[i].show.name;
     htmlShow += `<li style="background-color: #ccc" class="shows-list__item" id="${i}">`;
     htmlShow += `<h2 class="shows-list__title">${showName}</h2>`;
     htmlShow += `</li>`;
     if (searchedShows[i].show.image != null) {
-      console.log("No tiene foto :(");
-      htmlShow += `<img src="${searchedShows[i].show.image.medium}" alt="Imagen de la serie ${showName}" style="height: 200px" class="shows-list__img" title="Imagen de la serie ${showName}"></img>`;
+      let imgURL = searchedShows[i].show.image.medium;
+      htmlShow += `<img src="${imgURL}" alt="Imagen de la serie ${showName}" style="height: 200px" class="shows-list__img" title="Imagen de la serie ${showName}"></img>`;
     } else {
-      const errorImageURL = "https://via.placeholder.com/210x295/ffffff/666666/?";
-      htmlShow += `<img src="${errorImageURL}" alt="Imagen de la serie ${showName}" style="height: 200px" class="shows-list__img`;
+      imgURL =
+        "https://via.placeholder.com/210x295/ffffff/666666/?";
+      htmlShow += `<img src="${imgURL}" alt="Imagen de la serie ${showName}" style="height: 200px" class="shows-list__img`;
     }
   }
   showsContainer.innerHTML = htmlShow;
