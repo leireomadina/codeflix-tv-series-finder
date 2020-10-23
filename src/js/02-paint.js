@@ -13,7 +13,7 @@ function paintShows() {
     // let showImage = searchedShows[i].show.image.medium;
     const showName = searchedShows[i].show.name;
     htmlShow += `<li style="background-color: #ccc" class="shows-list__item" id="${i}">`;
-    htmlShow += `<h2 class="shows-list__title">${showName}</h2>`;
+    htmlShow += `<h3 class="shows-list__title">${showName}</h3>`;
     htmlShow += `</li>`;
     if (searchedShows[i].show.image != null) {
       let imgURL = searchedShows[i].show.image.medium;
