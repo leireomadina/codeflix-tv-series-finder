@@ -1,5 +1,34 @@
 ![Adalab](https://beta.adalab.es/resources/images/adalab-logo-155x61-bg-white.png)
 
+** Ejercicio de evaluación final módulo 2 - Buscador de series **
+
+Pasos a seguir:
+
+- [x] Configuración previa del proyecto
+    - [x] Clonar repo
+    - [x] Preparar adalab web starter kit
+    - [x] Activar Github Pages
+- [x] Estructura básica HTML
+- [x] Conectar con API
+  - [x] Fetch: obtener datos del server
+  - [x] Parsear: adaptar/transformar los datos del server
+  - [x] Buscar series por el nombre
+- [ ] Pintar 1 serie en HTML
+    - [ ] Crear HTML de guía (provisional)
+    - [ ] Contenido dinámico mediante JS
+- [ ] Darle estilos mínimos en CSS
+- [ ] Pintar varias series
+- [ ] Sección favoritas
+    - [ ] HTML de la sección favoritas
+    - [ ] Maquetación mínima con CSS de la sección de favoritas
+    - [ ] Marcar la serie seleccionada por la usuaria como favorita: añadir
+    - [ ] Quitar series de la lista de favoritas
+    - [ ] Cachear las series favoritas en localStorage
+- [ ] Estilos CSS
+- [ ] Refractorizar código final
+- [ ] Limpiar código final
+- [ ] Completar y terminar readme.md
+
 # Adalab web starter kit
 
 Ahoy! Este es nuestro Starter Kit creado en **node y gulp**. ¿Y qué es un Starter kit? Pues es una **plantilla de proyecto con funcionalidades preinstaladas y preconfiguradas**.
@@ -122,3 +151,4 @@ src
 ## Falta algo?
 
 Echas de menos que el kit haga algo en concreto? Pidelo sin problema a través de las issues o si te animas a mejorarlo mándanos un PR :)
+

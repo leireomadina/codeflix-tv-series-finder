@@ -18,14 +18,22 @@ function getData() {
     return response.json();
   })
   .then(function(data){
-    //loop to get the name and img of each show
-    for (let i = 0; i < data.length; i++) {
-      // searchedShows = data[i];
-      // console.log(searchedShows);
-      console.log(data[i].show.name);
-      console.log(data[i].show.image.medium);
-    }
+    searchedShows = data;
+    console.log(searchedShows);
+    paintShows();
   })
+}
+
+// Paint function
+
+function paintShows() {
+  //loop to get the name and img of each show
+  for (let i = 0; i < searchedShows.length; i++) {
+    // searchedShows = data;
+    // console.log(searchedShows);
+    console.log(searchedShows[i].show.name);
+    console.log(searchedShows[i].show.image.medium);
+  }
 }
 
 // Event listener and function calling
