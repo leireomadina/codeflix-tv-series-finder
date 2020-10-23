@@ -26,6 +26,7 @@ function saveFavorite(event) {
   // console.log("Lo quito del array");
   console.log(favoritedShows);
  }
+//  paintFavorites();
 }
 
 function listenShows() {
