@@ -12,10 +12,10 @@ function paintShows() {
     // console.log(searchedShows[i].show.image.medium);
     // let showImage = searchedShows[i].show.image.medium;
     const showName = searchedShows[i].show.name;
-    htmlShows += `<li class="shows-list__item js-show-item" id="${i}">`;
-    //find id of each show => in order to link it with favs
     const searchedShowId = searchedShows[i].show.id;
-    console.log(searchedShowId);
+    htmlShows += `<li class="shows-list__item js-show-item" data-id="${searchedShowId}">`;
+    //find id of each show => in order to link it with favs
+    // console.log(searchedShowId);
     if (searchedShows[i].show.image != null) {
       let imgURL = searchedShows[i].show.image.medium;
       htmlShows += `<img src="${imgURL}" alt="Imagen de la serie ${showName}" style="height: 200px" class="shows-list__img" title="Imagen de la serie ${showName}"></img>`;
