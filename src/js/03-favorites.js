@@ -3,12 +3,13 @@
 //empty array to store favorite shows
 let favoritedShows = [];
 
-function saveFavorite(event) {
+function selectFavorites(event) {
   //gets the id of each selected item 
   const selectedShow = event.currentTarget;
-  const selectedShowId = selectedShow.id;
+  const selectedShowId = parseInt(selectedShow.id);
+  console.log(typeof(selectedShowId));
   // console.log(selectedShow);
-  // console.log(selectedShowId);
+  console.log(selectedShowId);
   //searchs if the item is already in the array (if it is different from -1) and gets his position within it
   const favoriteIndex = favoritedShows.indexOf(selectedShowId);
   const isFavorite = favoriteIndex != -1;
@@ -26,12 +27,12 @@ function saveFavorite(event) {
   // console.log("Lo quito del array");
   console.log(favoritedShows);
  }
-//  paintFavorites();
+ paintFavorites();
 }
 
 function listenShows() {
   const showItems = document.querySelectorAll(".js-show-item");
   for (const showItem of showItems) {
-    showItem.addEventListener("click", saveFavorite);
+    showItem.addEventListener("click", selectFavorites);
   }
 }

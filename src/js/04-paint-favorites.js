@@ -4,6 +4,8 @@ const favsContainer = document.querySelector(".js-favs-container");
 function paintFavorites() {
   console.log("Holi, escucho a favs");
   let htmlFavShows = "";
+  console.log(favoritedShows);
+
   for (let i = 0; i < favoritedShows.length; i++) {
     const showFavName = favoritedShows[i].show.name;
     console.log(showFavName);
@@ -25,7 +27,7 @@ function paintFavorites() {
   // console.log(searchedShows);
 
 }
-// paintFavorites();
+//  paintFavorites();
 
 /*
 

@@ -15,7 +15,8 @@ function getData() {
     .then((response) => response.json())
     .then(function (data) {
       searchedShows = data;
-      // console.log(searchedShows);
+      console.log(searchedShows);
+      console.log(typeof(searchedShows));
       paintShows();
       listenShows();
     });
