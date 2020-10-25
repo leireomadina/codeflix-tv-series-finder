@@ -6,37 +6,38 @@ let favoritedShows = [];
 function selectFavorites(event) {
   //gets the id of each selected item 
   const selectedShow = event.currentTarget;
-  const selectedShowId = parseInt(selectedShow.dataset.id);
+  const selectedShowId = parseInt(selectedShow.dataset.id)
   const selectedShowName = selectedShow.querySelector(".shows-list__title").innerHTML;
+  // console.log(selectedShowName);
   const selectedShowImage = selectedShow.querySelector(".shows-list__img").src;
   // console.log(selectedShow);
-  // console.log(selectedShowId);
-  //objeto constructor
+  console.log(selectedShowId);
+  // OBJECTO CONSTRUCTOR
   let favShow = {
     id: selectedShowId,
     name: selectedShowName,
     image: selectedShowImage
   }
-
-  const favoriteIndex = favoritedShows.indexOf(selectedShowId);
-  const isFavorite = favoriteIndex != -1;
+ 
+  const favoriteIndex = favoritedShows.indexOf(favShow);
+  // const isFavorite = favoriteIndex != -1;
   // console.log(isFavorite);
- if (selectedShowId != null) {
+ if (!selectedShow.classList.contains("shows-list__item--favorite")) {
   //push selected item into the array
   console.log("Lo meto en el array");
   favoritedShows.push(favShow);
   console.log(favoritedShows);
   selectedShow.classList.add("shows-list__item--favorite");
-  paintFavorites();
+  // paintFavorites();
  } else {
    //remove selected item from the array
   favoritedShows.splice(favoriteIndex,1);
   selectedShow.classList.remove("shows-list__item--favorite");
   console.log("Lo quito del array");
   console.log(favoritedShows);
-  paintFavorites();
+  // paintFavorites();
  }
-//  paintFavorites();
+  paintFavorites();
 }
 
 function listenShows() {

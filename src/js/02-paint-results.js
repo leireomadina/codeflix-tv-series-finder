@@ -22,7 +22,7 @@ function paintShows() {
     } else {
       imgURL =
         "https://via.placeholder.com/210x295/ffffff/666666/?";
-      htmlShows += `<img src="${imgURL}" alt="Imagen de la serie ${showName}" style="height: 200px" class="shows-list__img`;
+      htmlShows += `<img src="${imgURL}" alt="Imagen de la serie ${showName}" style="height: 200px" class="shows-list__img">`;
     }
     htmlShows += `<h3 class="shows-list__title">${showName}</h3>`;
     htmlShows += `</li>`;

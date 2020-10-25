@@ -2,16 +2,16 @@
 const favsContainer = document.querySelector(".js-favs-container");
 
 function paintFavorites() {
-  console.log("Holi, escucho a favs");
+  // console.log("Holi, escucho a favs");
   let htmlFavShows = "";
-  console.log(favoritedShows);
+  // console.log(favoritedShows);
 
   for (let i = 0; i < favoritedShows.length; i++) {
     const showFavName = favoritedShows[i].name;
-    // const showFavId = favoritedShows[i].id;
+    const showFavId = favoritedShows[i].id;
     const showFavImage = favoritedShows[i].image;
     console.log(showFavName);
-    htmlFavShows += `<li>`;
+    htmlFavShows += `<li data-id="${showFavId}" class="favorites-list__item">`;
     if(favoritedShows[i].image != null) {
       // let imgFavURL = favoritedShows[i].show.image.medium;
       htmlFavShows += `<img src="${showFavImage}" alt="Imagen de la serie ${showFavName}" style="height: 200px" class="favorites-list__img" title="Imagen de la serie ${showFavName}"></img>`;
@@ -29,7 +29,7 @@ function paintFavorites() {
   // console.log(searchedShows);
 
 }
-//  paintFavorites();
+  // paintFavorites();
 
 /*
 
