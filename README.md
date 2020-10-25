@@ -34,7 +34,7 @@ Pasos a seguir:
     - [x] Guardar la lista de favoritos en local storage
     - [x] Recuperar la información
 - [ ] Estilos CSS
-  - [ ] Sección favoritos en parte izquierda pantalla
+    - [ ] Sección favoritos en parte izquierda pantalla
 - [ ] Bonus: borrar favoritos
     - [ ] Botón de borrar favoritos
     - [ ] Serie con clase de favorita tras nueva búsqueda
