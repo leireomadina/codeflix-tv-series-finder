@@ -1,11 +1,34 @@
 .main {
-  display: flex;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 10vh 1fr;
+}
+
+// Search section
+
+.search-section {
+  background-color: w;
+  // width: 30%;
+  // height: 10vh;
+
+}
+
+// Results section
+.results-section {
+  background-color: lightcoral;
+
 }
 
 .shows-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   &__item {
     background-color: lightgreen;
     margin-bottom: 20px;
+     width: 25%;
+
+    // flex-grow: 1;
 
     //clase de favoritos a añadir en JS
     &--favorite {
@@ -15,8 +38,10 @@
   }
 }
 
+// Favorites section
+
 .favorites-section {
-  margin-left: 20px;
+  // margin-left: 20px;
   background-color: lightskyblue;
 }
 
