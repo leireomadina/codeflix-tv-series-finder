@@ -31,11 +31,15 @@ Pasos a seguir:
     - [x] Crear array de ids de favoritos
     - [x] Quitar series de la lista de favoritas
 - [ ] Cachear las series favoritas en localStorage
-    - [ ] Guardar la lista de favoritos en local storage
-    - [ ] 
+    - [x] Guardar la lista de favoritos en local storage
+    - [x] Recuperar la información
 - [ ] Estilos CSS
   - [ ] Sección favoritos en parte izquierda pantalla
-  - [ ] Estilos generales
+- [ ] Bonus: borrar favoritos
+    - [ ] Botón de borrar favoritos
+    - [ ] Serie con clase de favorita tras nueva búsqueda
+    - [ ] Botón borrar todos los favoritos
+- [ ] Bonus: afinar la maquetación
 - [ ] Refractorizar código final
 - [ ] Limpiar código final
 - [ ] Completar y terminar readme.md
