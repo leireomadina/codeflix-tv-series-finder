@@ -21,7 +21,7 @@ function paintShows() {
       htmlShows += `<img src="${imgURL}" alt="Imagen de la serie ${showName}" style="height: 200px" class="shows-list__img" title="Imagen de la serie ${showName}"></img>`;
     } else {
       imgURL =
-        "https://via.placeholder.com/210x295/ffffff/666666/?";
+        "./assets/images/noimg.jpg";
       htmlShows += `<img src="${imgURL}" alt="Imagen de la serie ${showName}" style="height: 200px" class="shows-list__img">`;
     }
     htmlShows += `<h3 class="shows-list__title">${showName}</h3>`;

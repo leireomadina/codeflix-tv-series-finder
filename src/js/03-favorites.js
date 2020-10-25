@@ -22,6 +22,7 @@ function selectFavorites(event) {
   const favoriteIndex = favoritedShows.indexOf(favShow);
   // const isFavorite = favoriteIndex != -1;
   // console.log(isFavorite);
+  console.log(favoriteIndex);
  if (!selectedShow.classList.contains("shows-list__item--favorite")) {
   //push selected item into the array
   console.log("Lo meto en el array");
@@ -29,6 +30,7 @@ function selectFavorites(event) {
   console.log(favoritedShows);
   selectedShow.classList.add("shows-list__item--favorite");
   // paintFavorites();
+
  } else {
    //remove selected item from the array
   favoritedShows.splice(favoriteIndex,1);
@@ -36,8 +38,9 @@ function selectFavorites(event) {
   console.log("Lo quito del array");
   console.log(favoritedShows);
   // paintFavorites();
+
  }
-  paintFavorites();
+   paintFavorites();
 }
 
 function listenShows() {
