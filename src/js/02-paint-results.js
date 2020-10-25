@@ -17,12 +17,12 @@ function paintShows() {
     //find id of each show => in order to link it with favs
     // console.log(searchedShowId);
     if (searchedShows[i].show.image != null) {
-      let imgURL = searchedShows[i].show.image.medium;
-      htmlShows += `<img src="${imgURL}" alt="Imagen de la serie ${showName}" style="height: 200px" class="shows-list__img" title="Imagen de la serie ${showName}"></img>`;
+      let imgURL = searchedShows[i].show.image.original;
+      htmlShows += `<img src="${imgURL}" alt="Imagen de la serie ${showName}" class="shows-list__img" title="Imagen de la serie ${showName}"></img>`;
     } else {
       imgURL =
         "./assets/images/noimg.jpg";
-      htmlShows += `<img src="${imgURL}" alt="Imagen de la serie ${showName}" style="height: 200px" class="shows-list__img">`;
+      htmlShows += `<img src="${imgURL}" alt="Imagen de la serie ${showName}" class="shows-list__img">`;
     }
     htmlShows += `<h3 class="shows-list__title">${showName}</h3>`;
     htmlShows += `</li>`;

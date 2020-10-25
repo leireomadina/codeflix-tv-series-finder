@@ -1,22 +1,61 @@
 .main {
   display: grid;
-  grid-template-columns: 20% 80%;
-  grid-template-rows: 10vh 1fr;
+  grid-template-columns: minmax(250px, auto) 1fr;
+  grid-template-rows: 120px 1fr;
 }
 
 // Search section
 
-.search-section {
-  background-color: w;
-  // width: 30%;
-  // height: 10vh;
+// .search-section {
+// padding: 30px;
+// }
 
+.form {
+  padding: 40px 20px 20px 30px;
+  // font-size: 18px;
+  // background-color: lightcoral;
+
+  &__search {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+     appearance: none;
+    width: 200px;
+    height: 40px;
+    background-color: $color-bg !important;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-right: 10px;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 10px;
+
+      &[placeholder] {
+       padding: 0 8px;
+      }
+  }
+
+  &__btn {
+    height: 40px;
+    padding: 10px 8px;
+    background-color: $color-brand;
+    color: $color-main-font;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px 0px rgba(204, 204, 204, 0.5);
+    cursor: pointer;
+
+    &:hover {
+      background-color: lighten(#e50914, 8%);
+    } 
+  }
 }
 
 // Results section
-.results-section {
-  background-color: lightcoral;
 
+.results-section {
+  // background-color: lightcoral;
+  padding: 30px 20px;
 }
 
 .shows-list {
@@ -26,30 +65,62 @@
   &__item {
     background-color: lightgreen;
     margin-bottom: 20px;
-     width: 25%;
+    margin-right: 20px;
+    //  width: 25%;
 
     // flex-grow: 1;
 
     //clase de favoritos a añadir en JS
     &--favorite {
-      background-color: red;
+      background-color: $color-brand;
       color: white;
-     }
+    }
+  }
+
+  &__img {
+    height: 300px;
   }
 }
 
 // Favorites section
 
 .favorites-section {
-  // margin-left: 20px;
-  background-color: lightskyblue;
+  min-width: 250px;
+  padding: 20px 20px 0 30px;
+  // background-color: lightblue;
+
+  &__title {
+    font-size: 22px;
+    margin-bottom: 25px;
+    text-align: center;
+    // text-align: left;
+  }
+}
+
+.favorites-list {
+  &__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  &__img {
+    height: 120px;
+
+  }
+
+  &__title{
+    font-size: 16px;
+    padding-left: 15px;
+    font-weight: bold;
+  }
 }
 
 //clase de favoritos a añadir en JS
 // .favorites--selected {
 //   background-color: red;
 // }
-
 
 // .favorites-list__img {
 //   width: 100px;;
