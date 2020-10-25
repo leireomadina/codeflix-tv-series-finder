@@ -24,6 +24,8 @@ function paintFavorites() {
     htmlFavShows += `</li>`;
   }
   favsContainer.innerHTML = htmlFavShows;
+  setLocalStorage();
+
 }
 //  paintFavorites();
 

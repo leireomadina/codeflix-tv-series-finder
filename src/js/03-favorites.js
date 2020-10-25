@@ -36,7 +36,7 @@ function selectFavorites(event) {
     favoritedShows.push(favShow);
     console.log(favoritedShows);
     selectedShow.classList.add("shows-list__item--favorite");
-    paintFavorites();
+    // paintFavorites();
   } else {
     console.log(favShow);
     //remove selected item from the array
@@ -44,9 +44,10 @@ function selectFavorites(event) {
     selectedShow.classList.remove("shows-list__item--favorite");
     console.log("Lo quito del array");
     console.log(favoritedShows);
-    paintFavorites();
+    // paintFavorites();
   }
-  //  paintFavorites();
+  setLocalStorage();
+  paintFavorites();
 }
 
 function listenShows() {

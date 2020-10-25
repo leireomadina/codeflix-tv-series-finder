@@ -27,8 +27,11 @@ Pasos a seguir:
 - [ ] Sección favoritos: pintar
     - [x] HTML de la sección favoritos
     - [x] Maquetación mínima con CSS de la sección de favoritos
-    - [ ] Pintar series favoritas en nueva sección de manera dinámica (JS)
+    - [x] Pintar series favoritas en nueva sección de manera dinámica (JS): añadir
+    - [x] Crear array de ids de favoritos
+    - [x] Quitar series de la lista de favoritas
 - [ ] Cachear las series favoritas en localStorage
+    - [ ] Guardar la lista de favoritos en local storage
     - [ ] 
 - [ ] Estilos CSS
   - [ ] Sección favoritos en parte izquierda pantalla
