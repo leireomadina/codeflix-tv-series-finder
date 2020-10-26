@@ -1,6 +1,7 @@
 //** Paint search results  
 
 const showsContainer = document.querySelector(".js-shows-container");
+const wrapperEl = document.querySelector(".page-wrapper");
 
 function paintShows() {
   let htmlShows = "";
@@ -26,6 +27,7 @@ function paintShows() {
     }
     htmlShows += `<h3 class="shows-list__title">${showName}</h3>`;
     htmlShows += `</li>`;
+    wrapperEl.classList.add("hidden");
   }
   showsContainer.innerHTML = htmlShows;
 }
