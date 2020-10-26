@@ -1,0 +1,40 @@
+// Results section
+
+.results-section {
+  padding: 30px 20px;
+}
+
+.shows-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  &__item {
+    background-color: white;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 3px 3px 3px 0px rgba(204, 204, 204, 0.5);
+    transition: all 0.3s ease-out;
+
+
+    // favorited class added with JS
+    &--favorite {
+      background-color: $color-brand;
+      color: white;
+      border: 3px solid $color-brand;
+    }
+  }
+
+  &__img {
+    height: 250px;
+    max-width: 204px;
+  }
+
+  &__title {
+    padding-top: 10px;
+  }
+}
