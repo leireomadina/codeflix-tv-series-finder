@@ -36,18 +36,18 @@ Estas son las fases y pasos que se seguido para completar el proyecto de manera 
     - [x] Guardar los favoritos en un array
     - [x] Añadir la clase de favorito
     - [x] Quitar la clase de favorito
-- [ ] Sección favoritos: pintar
+- [x] Sección favoritos: pintar
     - [x] HTML de la sección favoritos
     - [x] Maquetación mínima con CSS de la sección de favoritos
     - [x] Pintar series favoritas en nueva sección de manera dinámica (JS): añadir
     - [x] Crear array de ids de favoritos
     - [x] Quitar series de la lista de favoritas
-- [ ] Cachear las series favoritas en localStorage
+- [x] Cachear las series favoritas en localStorage
     - [x] Guardar la lista de favoritos en local storage
     - [x] Recuperar la información
-- [ ] Estilos CSS
+- [x] Estilos CSS
     - [x] Sección favoritos en parte izquierda pantalla
-- [ ] Bonus: borrar favoritos
+- [x] Bonus: borrar favoritos
     - [x] Botón de borrar favoritos
     - [ ] Serie con clase de favorita tras nueva búsqueda
     - [ ] Botón borrar todos los favoritos
