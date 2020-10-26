@@ -1,15 +1,16 @@
 ![Adalab](https://beta.adalab.es/resources/images/adalab-logo-155x61-bg-white.png)
 
 # Ejercicio de evaluación final módulo 2 - Buscador de series
+
 ## Leire Ordeñana Madina - alumna de Adalab
 
 Hola :)
 
 Soy Leire y este es mi proyecto de evaluación final del módulo 2 en Adalab, donde hemos trabajado especialmente con JavaScript.
 
-El trabajo consiste en crear una aplicación web de búsqueda de series de TV, donde además se permite al usuario marcar y desmarcar series como favoritas a la vez que se guardan en su navegador.
+El trabajo consiste en crear una aplicación web de búsqueda de series de TV, donde además se permite al usuario marcar y desmarcar series como favoritas a la vez que se guardan en el caché de su navegador.
 
-Para poner en práctica este proyecto he utilizado HTML5 y CSS3 para maquetar la página, además del preprocesador SASS y tecnologías de automatización como Gulp, NodeJS, npm y el adalab web starter kit. Pero sobre todo se ha profundizado en Javascript para aportar interactividad a la página. De cara a obtener los datos de las series,se ha utilizado una API abierta llamada TVMaze.
+Para poner en práctica este proyecto he utilizado HTML5 y CSS3 para maquetar la página, además del preprocesador SASS y tecnologías de automatización como Gulp, NodeJS, npm y la plantilla "adalab web starter kit" de Adalab. Pero sobre todo se ha profundizado en Javascript para aportar interactividad a la página. De cara a obtener los datos de las series, se ha utilizado una API pública llamada TVMaze.
 
 
 ## Pasos seguidos: fases y tareas
@@ -59,7 +60,7 @@ Estas son las fases y pasos que se seguido para completar el proyecto de manera 
     - [ ] Mejorar y ampliar la info
 
 
-### Pasos para arrancar el proyecto:
+## Pasos para arrancar el proyecto:
 
 > **NOTA:** Necesitas tener instalado [Node JS](https://nodejs.org/) para trabajar con este Starter Kit:
 
