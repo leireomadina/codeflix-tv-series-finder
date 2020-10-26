@@ -48,6 +48,7 @@ function selectFavorites(event) {
   }
   setLocalStorage();
   paintFavorites();
+  listenFavs();
 }
 
 function listenShows() {

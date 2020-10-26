@@ -21,6 +21,7 @@ function getData() {
       listenShows();
       // paintFavorites();
       // setLocalStorage();
+      listenFavs();
     });
 }
 
