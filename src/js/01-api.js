@@ -1,12 +1,13 @@
-//** API 
+//** 01 - API 
 
-// Get elements and define tv-series array
+// Get search elements and define tv-series array
 
 const searchInput = document.querySelector(".js-search");
 const btn = document.querySelector(".js-btn");
+// initially empty array that will be filled after the user's search
 let searchedShows = [];
 
-// Fetch function
+// Fetch function to get the data from the API
 
 function getData() {
   const apiBaseUrl = "//api.tvmaze.com/search/shows?q=";
@@ -15,8 +16,6 @@ function getData() {
     .then((response) => response.json())
     .then(function (data) {
       searchedShows = data;
-      console.log("entro en get data");
-      console.log(searchedShows);
       paintShows();
       listenShows();
       listenFavs();

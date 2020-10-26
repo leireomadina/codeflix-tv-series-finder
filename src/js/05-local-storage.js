@@ -1,4 +1,4 @@
-//** Local storage
+//** 05 - Local storage
 
 function setLocalStorage() {
  const selectedFavs = localStorage.setItem("favoritedShows", JSON.stringify(favoritedShows));

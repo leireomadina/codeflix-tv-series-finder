@@ -1,4 +1,4 @@
-//** Remove button in favs section
+//** 06 - Remove button in favorites section
 
 function removeFavs(event) {
   //cada remove btn tiene asignado en html un id con dataset

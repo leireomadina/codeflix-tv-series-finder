@@ -1,11 +1,12 @@
-//** Favorites
+//** 03 - Select and remove favorites
 
-//empty array to store favorite shows
+// Arrays to store favorited shows
+
 let favoritedShows = [];
+// this special array is needed to store the id of each selected show
 let favoritedShowsId = [];
 
 function selectFavorites(event) {
-  //gets the id of each selected item
   const selectedShow = event.currentTarget;
   const selectedShowId = parseInt(selectedShow.dataset.id);
   const selectedShowName = selectedShow.querySelector(".shows-list__title")
@@ -13,7 +14,8 @@ function selectFavorites(event) {
   const selectedShowImage = selectedShow.querySelector(".shows-list__img").src;
   console.log("elemento clickado", selectedShow);
   console.log("id del elemento clickado", selectedShowId);
-  //objeto constructor
+
+  // constructor object to create an object template for each favorited show
   let favShow = {
     id: selectedShowId,
     name: selectedShowName,
@@ -38,18 +40,19 @@ function selectFavorites(event) {
     selectedShow.classList.add("shows-list__item--favorite");
     // paintFavorites();
   } else {
-    console.log(favShow);
     //remove selected item from the array
+    console.log(favShow);
     favoritedShows.splice(indFavorite, 1);
     selectedShow.classList.remove("shows-list__item--favorite");
     console.log("Lo quito del array");
     console.log(favoritedShows);
-    // paintFavorites();
   }
   paintFavorites();
   listenFavs();
   setLocalStorage();
 }
+
+// Listens to each rendered item in the results section
 
 function listenShows() {
   const showItems = document.querySelectorAll(".js-show-item");
