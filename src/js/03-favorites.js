@@ -46,9 +46,9 @@ function selectFavorites(event) {
     console.log(favoritedShows);
     // paintFavorites();
   }
-  setLocalStorage();
   paintFavorites();
   listenFavs();
+  setLocalStorage();
 }
 
 function listenShows() {
