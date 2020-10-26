@@ -22,7 +22,7 @@ function paintShows() {
       htmlShows += `<img src="${imgURL}" alt="Imagen de la serie ${showName}" class="shows-list__img" title="Imagen de la serie ${showName}"></img>`;
     } else {
       imgURL =
-        "./assets/images/noimg.jpg";
+        "./assets/images/nopicture.png";
       htmlShows += `<img src="${imgURL}" alt="Imagen de la serie ${showName}" class="shows-list__img">`;
     }
     htmlShows += `<h3 class="shows-list__title">${showName}</h3>`;
