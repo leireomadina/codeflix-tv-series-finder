@@ -1,55 +1,52 @@
-//** Favorites
+//** 03 - Select and remove favorites
 
-//empty array to store favorite shows
+// Arrays to store favorited shows info
+
 let favoritedShows = [];
+// this adittional array is needed to store the id of each selected show
 let favoritedShowsId = [];
 
+// Function to select and remove favorited items
+
 function selectFavorites(event) {
-  //gets the id of each selected item
   const selectedShow = event.currentTarget;
   const selectedShowId = parseInt(selectedShow.dataset.id);
+  //gets the name and image from each show in the paint-shows js file
   const selectedShowName = selectedShow.querySelector(".shows-list__title")
     .innerHTML;
   const selectedShowImage = selectedShow.querySelector(".shows-list__img").src;
   console.log("elemento clickado", selectedShow);
   console.log("id del elemento clickado", selectedShowId);
-  //objeto constructor
+
+  // constructor object to create an object template for each favorited show
   let favShow = {
     id: selectedShowId,
     name: selectedShowName,
     image: selectedShowImage,
   };
 
-  //array de ids de favoritos
+  //to get the id of each favorited show and store it in the favoritedShowsId array: we need this in order to use the indexOf and splice method later
   favoritedShowsId = favoritedShows.map(function (element) {
     return parseInt(element.id);
   });
 
-  console.log("array de ids", favoritedShowsId);
-  const indFavorite = favoritedShowsId.indexOf(selectedShowId);
-  console.log("index de array de ids", indFavorite);
-  console.log("serie fav de objecto constructor", favShow);
-  // const isFavorite = favoriteIndex != -1;
-  if (indFavorite === -1) {
-    //push selected item into the array
-    console.log("Lo meto en el array");
+  // conditional to check if the item is already in the favorite array using the indexOf method:
+  const favoriteIndex = favoritedShowsId.indexOf(selectedShowId);
+  if (favoriteIndex === -1) {
+    //push the selected item into the array
     favoritedShows.push(favShow);
-    console.log(favoritedShows);
     selectedShow.classList.add("shows-list__item--favorite");
-    // paintFavorites();
   } else {
-    console.log(favShow);
     //remove selected item from the array
-    favoritedShows.splice(indFavorite, 1);
+    favoritedShows.splice(favoriteIndex, 1);
     selectedShow.classList.remove("shows-list__item--favorite");
-    console.log("Lo quito del array");
-    console.log(favoritedShows);
-    // paintFavorites();
   }
   paintFavorites();
   listenFavs();
   setLocalStorage();
 }
+
+// Listens to the rendered items in the results section
 
 function listenShows() {
   const showItems = document.querySelectorAll(".js-show-item");

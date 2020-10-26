@@ -1,18 +1,17 @@
 body {
-  // padding: 2rem;
   height: 100vh;
-  // background-image: url('../images/bg-adalab.png');
   background-color: $color-bg;
   font-family: $font-main;
-
 }
+
 .page-wrapper {
   height: 100vh;
-  background-image: url(../images/portada-bn.png);
+  background-image: url(../images/portada.png);
   background-repeat: no-repeat;
   background-position: center bottom;
 }
 
+// to hide the background img when results render
 .hidden {
   background-image: none;
 }

@@ -34,14 +34,14 @@ Pasos a seguir:
     - [x] Guardar la lista de favoritos en local storage
     - [x] Recuperar la información
 - [ ] Estilos CSS
-    - [ ] Sección favoritos en parte izquierda pantalla
+    - [x] Sección favoritos en parte izquierda pantalla
 - [ ] Bonus: borrar favoritos
-    - [ ] Botón de borrar favoritos
+    - [x] Botón de borrar favoritos
     - [ ] Serie con clase de favorita tras nueva búsqueda
     - [ ] Botón borrar todos los favoritos
-- [ ] Bonus: afinar la maquetación
-- [ ] Refractorizar código final
-- [ ] Limpiar código final
+- [x] Bonus: afinar la maquetación
+- [x] Refractorizar código final
+- [x] Limpiar código final
 - [ ] Completar y terminar readme.md
 
 # Adalab web starter kit
