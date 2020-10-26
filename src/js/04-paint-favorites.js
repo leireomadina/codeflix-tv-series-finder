@@ -8,7 +8,7 @@ function paintFavorites() {
 
   for (let i = 0; i < favoritedShows.length; i++) {
     const showFavName = favoritedShows[i].name;
-    // const showFavId = favoritedShows[i].id;
+    const showFavId = favoritedShows[i].id;
     const showFavImage = favoritedShows[i].image;
     // console.log(showFavName);
     htmlFavShows += `<li class="favorites-list__item">`;
@@ -22,7 +22,7 @@ function paintFavorites() {
     }
     htmlFavShows += `<h4 class="favorites-list__title">${showFavName}</h4>`;
     // htmlFavShows += `<div class="favorites-list__btn-container">`
-    htmlFavShows += `<input type="button" value="x" class="favorites-list__remove-btn">`;
+    htmlFavShows += `<input type="button" value="x" class="favorites-list__remove-btn" data-id="${showFavId}">`;
     // htmlFavShows += `</div>`
     htmlFavShows += `</li>`;
   }

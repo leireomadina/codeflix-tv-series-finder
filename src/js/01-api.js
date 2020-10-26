@@ -19,8 +19,7 @@ function getData() {
       console.log(searchedShows);
       paintShows();
       listenShows();
-      // paintFavorites();
-      // setLocalStorage();
+      listenFavs();
     });
 }
 
