@@ -9,7 +9,7 @@ let searchedShows = [];
 // Fetch function
 
 function getData() {
-  const apiBaseUrl = "http://api.tvmaze.com/search/shows?q=";
+  const apiBaseUrl = "//api.tvmaze.com/search/shows?q=";
   const userSearch = searchInput.value;
   fetch(`${apiBaseUrl} + ${userSearch}`)
     .then((response) => response.json())

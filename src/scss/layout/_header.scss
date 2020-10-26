@@ -1,12 +1,10 @@
 .header {
-  height: 15vh;
   width: 100%;
   background-color: $color-bg-secondary;
   padding: 25px 50px;
   color: $color-main-font;
   text-align: center;
 
-  //borrar y cambiar h!!!!!
   &__title{
     font-size: 35px;
   }
