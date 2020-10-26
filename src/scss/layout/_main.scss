@@ -6,24 +6,18 @@
 
 // Search section
 
-// .search-section {
-// padding: 30px;
-// }
-
 .form {
   padding: 40px 20px 20px 30px;
-  // font-size: 18px;
-  // background-color: lightcoral;
 
   &__search {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-     appearance: none;
-    width: 200px;
+    // -webkit-appearance: none;
+    // -moz-appearance: none;
+    //  appearance: none;
+    width: 250px;
     height: 40px;
-    background-color: $color-bg !important;
+    background-color: $color-bg;
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 3px solid black;
     margin-right: 10px;
     display: inline-block;
     font-size: 16px;
@@ -44,9 +38,10 @@
     border-radius: 4px;
     box-shadow: 2px 2px 2px 0px rgba(204, 204, 204, 0.5);
     cursor: pointer;
+    transition: background-color 0.3s ease-out;
 
     &:hover {
-      background-color: lighten(#e50914, 8%);
+      background-color: lighten($color-brand, 8%);
     } 
   }
 }
@@ -54,7 +49,6 @@
 // Results section
 
 .results-section {
-  // background-color: lightcoral;
   padding: 30px 20px;
 }
 
@@ -62,23 +56,36 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
+
   &__item {
-    background-color: lightgreen;
+    background-color: $color-bg;
     margin-bottom: 20px;
     margin-right: 20px;
-    // width: 25%;
-    // flex-grow: 1;
+    padding: 20px;
+    text-align: center;
+    border: 3px solid $color-bg-secondary;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px 0px rgba(204, 204, 204, 0.5);
 
-    //clase de favoritos a añadir en JS
+
+    //clase de favoritos añadida en JS
     &--favorite {
       background-color: $color-brand;
       color: white;
+      border: none
+
     }
   }
 
   &__img {
     height: 300px;
+    max-width: 204px;
+  }
+
+  &__title {
+    padding-top: 10px;
   }
 }
 
@@ -87,13 +94,11 @@
 .favorites-section {
   min-width: 250px;
   padding: 20px 20px 0 30px;
-  // background-color: lightblue;
 
   &__title {
     font-size: 22px;
     margin-bottom: 25px;
     text-align: center;
-    // text-align: left;
   }
 }
 
@@ -105,9 +110,10 @@
     align-items: center;
     margin-bottom: 10px;
   }
+
   &__img {
     height: 120px;
-
+    max-width: 82px;
   }
 
   &__title{
@@ -116,12 +122,3 @@
     font-weight: bold;
   }
 }
-
-//clase de favoritos a añadir en JS
-// .favorites--selected {
-//   background-color: red;
-// }
-
-// .favorites-list__img {
-//   width: 100px;;
-// }
