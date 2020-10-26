@@ -55,6 +55,7 @@ function selectFavorites(event) {
 // Listens to each rendered item in the results section
 
 function listenShows() {
+  // selects all show items and then uses a loop to go over them
   const showItems = document.querySelectorAll(".js-show-item");
   for (const showItem of showItems) {
     showItem.addEventListener("click", selectFavorites);
