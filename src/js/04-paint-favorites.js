@@ -21,6 +21,9 @@ function paintFavorites() {
       htmlShows += `<img src="${showFavImage}" alt="Imagen de la serie ${showFavName}" class="favorites-list__img`;
     }
     htmlFavShows += `<h4 class="favorites-list__title">${showFavName}</h4>`;
+    // htmlFavShows += `<div class="favorites-list__btn-container">`
+    htmlFavShows += `<input type="button" value="x" class="favorites-list__remove-btn">`;
+    // htmlFavShows += `</div>`
     htmlFavShows += `</li>`;
   }
   favsContainer.innerHTML = htmlFavShows;

@@ -17,9 +17,9 @@
     height: 40px;
     background-color: $color-bg;
     border: none;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid $color-bg-secondary;
     margin-right: 10px;
-    display: inline-block;
+    // display: inline-block;
     font-size: 16px;
     margin-bottom: 10px;
 
@@ -68,14 +68,14 @@
     border: 3px solid $color-bg-secondary;
     border-radius: 4px;
     box-shadow: 3px 3px 3px 0px rgba(204, 204, 204, 0.5);
+    transition: all 0.3s ease-out;
 
 
     //clase de favoritos añadida en JS
     &--favorite {
       background-color: $color-brand;
       color: white;
-      border: none
-
+      border: 3px solid $color-brand;
     }
   }
 
@@ -94,6 +94,7 @@
 .favorites-section {
   min-width: 250px;
   padding: 20px 20px 0 30px;
+  // background-color: lightcyan;
 
   &__title {
     font-size: 22px;
@@ -120,5 +121,26 @@
     font-size: 16px;
     padding-left: 15px;
     font-weight: bold;
+  }
+
+  &__remove-btn {
+    height: 20px;
+    width: 20px;
+    margin-left: 15px;
+    justify-self: left;
+    background-color: $color-brand;
+    color: $color-main-font;
+    font-size: 16px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 2px 2px 2px 0px rgba(204, 204, 204, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease-out;
+    text-align: center;
+    box-shadow: 2px 2px 2px 0px rgba(204, 204, 204, 0.5);
+
+    &:hover {
+      background-color: lighten($color-brand, 8%);
+    } 
   }
 }
