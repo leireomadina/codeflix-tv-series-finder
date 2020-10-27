@@ -10,11 +10,14 @@ let searchedShows = [];
 // Fetch function to get the data from the API
 
 function getData() {
+  //remove https to solve githubs error
   const apiBaseUrl = "//api.tvmaze.com/search/shows?q=";
   const userSearch = searchInput.value;
+  // console.log(userSearch);
   fetch(`${apiBaseUrl} + ${userSearch}`)
     .then((response) => response.json())
     .then(function (data) {
+      // console.log(data);
       searchedShows = data;
       paintShows();
       listenShows();
