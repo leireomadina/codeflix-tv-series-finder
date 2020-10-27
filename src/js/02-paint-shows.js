@@ -14,6 +14,8 @@ function paintShows() {
     const showName = searchedShows[i].show.name;
     //finds the API id of each show: unique element in order to identify each show
     const searchedShowId = searchedShows[i].show.id;
+    const searchedShowStatus = searchedShows[i].show.status;
+    // console.log(searchedShowStatus);
     htmlShows += `<li class="shows-list__item js-show-item" data-id="${searchedShowId}">`;
     //this conditional statements are needed because there are some shows that have no image in the API data
     if (searchedShows[i].show.image != null) {
@@ -25,6 +27,7 @@ function paintShows() {
       htmlShows += `<img src="${imgURL}" alt="Imagen de la serie ${showName}" class="shows-list__img">`;
     }
     htmlShows += `<h3 class="shows-list__title">${showName}</h3>`;
+    htmlShows += `<p>${searchedShowStatus}</p>`
     htmlShows += `</li>`;
     //removes the background hitchcock image before the show cards render
     wrapperEl.classList.add("hidden");

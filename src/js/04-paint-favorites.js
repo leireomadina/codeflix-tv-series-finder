@@ -13,6 +13,7 @@ function paintFavorites() {
     const showFavName = favoritedShows[i].name;
     const showFavId = favoritedShows[i].id;
     const showFavImage = favoritedShows[i].image;
+    console.log(showFavName);
     htmlFavShows += `<li class="favorites-list__item">`;
     if(favoritedShows[i].image != null) {
       htmlFavShows += `<img src="${showFavImage}" alt="Imagen de la serie ${showFavName}" class="favorites-list__img" title="Imagen de la serie ${showFavName}"></img>`;
@@ -29,3 +30,7 @@ function paintFavorites() {
   //calls the local storage function to store user's favorites in his browser
   setLocalStorage();
 }
+
+const logButton = document.querySelector(".js-btn-log");
+
+logButton.addEventListener("click", paintFavorites);
