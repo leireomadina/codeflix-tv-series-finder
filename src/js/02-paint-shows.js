@@ -1,12 +1,34 @@
-//** 02 - Paint search results  
+//** 02 - Paint search results
 
 // HTML elements
 const showsContainer = document.querySelector(".js-shows-container");
 const wrapperEl = document.querySelector(".page-wrapper");
 
+/*
+const handleSearch = () => {
+  if (!htmlShows) {
+    console.log("No hay nada");
+  } else {
+    paintShows();
+  }
+};
+*/
+
 // Renders the tv-shows after the user's search
 const paintShows = () => {
   let htmlShows = "";
+
+  if (!htmlShows) {
+    console.log("No hay nada");
+    const newParagraph = document.createElement("p");
+    const newContent = document.createTextNode(
+      "First you need to write the name of a TV show :)"
+    );
+    resultsContainer.appendChild(newParagraph);
+    newParagraph.appendChild(newContent);
+    newParagraph.classList.add("error-message");
+  }
+
   //loop to get the name and image of each show in the array
   for (let i = 0; i < searchedShows.length; i++) {
     const showName = searchedShows[i].show.name;
@@ -18,8 +40,7 @@ const paintShows = () => {
       let imgURL = searchedShows[i].show.image.original;
       htmlShows += `<img src="${imgURL}" alt="Imagen de la serie ${showName}" class="shows-list__img" title="Imagen de la serie ${showName}"></img>`;
     } else {
-      imgURL =
-        "./assets/images/nopicture.png";
+      imgURL = "./assets/images/nopicture.png";
       htmlShows += `<img src="${imgURL}" alt="Imagen de la serie ${showName}" class="shows-list__img">`;
     }
     htmlShows += `<h3 class="shows-list__title">${showName}</h3>`;
@@ -28,4 +49,4 @@ const paintShows = () => {
     wrapperEl.classList.add("hidden");
   }
   showsContainer.innerHTML = htmlShows;
-}
+};
