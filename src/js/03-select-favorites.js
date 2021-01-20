@@ -13,8 +13,8 @@ function selectFavorites(event) {
   const selectedShowName = selectedShow.querySelector(".shows-list__title")
     .innerHTML;
   const selectedShowImage = selectedShow.querySelector(".shows-list__img").src;
-  console.log("elemento clickado", selectedShow);
-  console.log("id del elemento clickado", selectedShowId);
+  // console.log("elemento clickado", selectedShow);
+  // console.log("id del elemento clickado", selectedShowId);
 
   // constructor object to create an object template for each favorited show
   let favShow = {
@@ -23,6 +23,8 @@ function selectFavorites(event) {
     image: selectedShowImage,
   };
 
+  console.log({favoritedShows});
+    
   //to get the id of each favorited show and store it in the favoritedShowsId array: we need this in order to use the indexOf and splice method later
   favoritedShowsId = favoritedShows.map(function (element) {
     return parseInt(element.id);
