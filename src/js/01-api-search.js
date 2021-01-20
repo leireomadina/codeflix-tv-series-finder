@@ -5,18 +5,28 @@ const searchInput = document.querySelector(".js-search");
 const btn = document.querySelector(".js-btn");
 const resultsContainer = document.querySelector(".js-results-container");
 
-// Array that will be filled after the user's search
+// Array that will be filled once the api returns data after the user's search
 let searchedShows = [];
 
-// Fetch function to get the data from the API TVMaze
-const getData = () => {
+// Checks if the user writes something in the input
+const handleSearch = () => {
+  if (searchInput.value === "") {
+    handleEmptySearch();
+  } else {
+    getDataFromApi();
+  }
+};
+
+// Gets the data from the API TVMaze
+const getDataFromApi = () => {
   const apiBaseUrl = "//api.tvmaze.com/search/shows?q=";
   const userSearch = searchInput.value;
   fetch(`${apiBaseUrl} + ${userSearch}`)
     .then((response) => response.json())
     .then(function (data) {
-      if (data.length === 0) {
-        showNotFound();
+      //checks if the data object is empty (no entry on database)
+      if (Object.entries(data).length === 0) {
+        handleNotFound();
       } else {
         searchedShows = data;
         paintShows();
@@ -27,15 +37,6 @@ const getData = () => {
     .catch((error) => handleServerError(error));
 };
 
-const showNotFound = () => {
-  if (data.length === 0) {
-    const newContent = document.createTextNode(
-      "Oops, that show is not on our database. Try again!"
-    );
-    createParagraph(newContent);
-  }
-};
-
 // Creates a paragraph using advanced DOM to show error messages
 const createParagraph = (newContent) => {
   const newParagraph = document.createElement("p");
@@ -44,7 +45,15 @@ const createParagraph = (newContent) => {
   newParagraph.classList.add("error-message");
 };
 
-// Creates an error message when the server connection fails
+// Shows a message when the tv show doesn't exist
+const handleNotFound = () => {
+    const newContent = document.createTextNode(
+      "Oops, that show is not on our database. Try again!"
+    );
+    createParagraph(newContent);
+};
+
+// Shows an error message when the server connection fails
 const handleServerError = (error) => {
   console.log("Sorry, an unexpected error has ocurred:", error);
   const newContent = document.createTextNode(
@@ -53,6 +62,13 @@ const handleServerError = (error) => {
   createParagraph(newContent);
 };
 
+// Shows an error message when the input is empty
+const handleEmptySearch = () => {
+  const newContent = document.createTextNode(
+    "First you need to write the name of a TV show :)"
+  );
+  createParagraph(newContent);
+};
+
 // Event listener
-btn.addEventListener("click", getData);
-// getData();
+btn.addEventListener("click", handleSearch);

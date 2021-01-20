@@ -4,22 +4,10 @@
 const showsContainer = document.querySelector(".js-shows-container");
 const wrapperEl = document.querySelector(".page-wrapper");
 
-const handleEmptySearch = () => {
-    const newContent = document.createTextNode(
-      "First you need to write the name of a TV show :)"
-    );
-    createParagraph(newContent);
-};
-
 // Renders the tv-shows after the user's search
 const paintShows = () => {
   let htmlShows = "";
-
-  if (!htmlShows) {
-    handleEmptySearch(); // REVISAR: como hacer que el mensaje solo salga una vez => meter un else y relaacionarlo con paintShows
-  }
-
-  //loop to get the name and image of each show in the array
+  //Gets the name and image of each show in the array
   for (let i = 0; i < searchedShows.length; i++) {
     const showName = searchedShows[i].show.name;
     //finds the API id of each show: unique element in order to identify each show
