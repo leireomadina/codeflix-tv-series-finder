@@ -1,12 +1,10 @@
 //** 02 - Paint search results  
 
-// Get wrapper and container elements
-
+// HTML elements
 const showsContainer = document.querySelector(".js-shows-container");
 const wrapperEl = document.querySelector(".page-wrapper");
 
-// Function to render the shows after the user's search
-
+// Renders the tv-shows after the user's search
 function paintShows() {
   let htmlShows = "";
   //loop to get the name and image of each show in the array

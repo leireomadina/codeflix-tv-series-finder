@@ -1,14 +1,12 @@
 //** 04 - Paint favorites 
 
-// Get container element in favorites section
-
+// HTML elements
 const favsContainer = document.querySelector(".js-favs-container");
 
-// Function to paint each favorited card within the favorites section
-
+// Paints each favorited card within the favorites section
 function paintFavorites() {
   let htmlFavShows = "";
-  //loop to get the name, id and image of each show in the favorite array
+  //gets the name, id and image of each show in the favorite array
   for (let i = 0; i < favoritedShows.length; i++) {
     const showFavName = favoritedShows[i].name;
     const showFavId = favoritedShows[i].id;
@@ -26,6 +24,6 @@ function paintFavorites() {
     htmlFavShows += `</li>`;
   }
   favsContainer.innerHTML = htmlFavShows;
-  //calls the local storage function to store user's favorites in his browser
+  //stores user's favorites in his browser
   setLocalStorage();
 }

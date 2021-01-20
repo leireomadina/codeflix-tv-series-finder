@@ -1,13 +1,11 @@
 //** 03 - Select and remove favorites
 
 // Arrays to store favorited shows info
-
 let favoritedShows = [];
 // this adittional array is needed to store the id of each selected show
 let favoritedShowsId = [];
 
-// Function to select and remove favorited items
-
+// Selects and removes favorited items
 function selectFavorites(event) {
   const selectedShow = event.currentTarget;
   const selectedShowId = parseInt(selectedShow.dataset.id);
@@ -30,14 +28,14 @@ function selectFavorites(event) {
     return parseInt(element.id);
   });
 
-  // conditional to check if the item is already in the favorite array using the indexOf method:
+  //checks if the item is already in the favorite array
   const favoriteIndex = favoritedShowsId.indexOf(selectedShowId);
   if (favoriteIndex === -1) {
-    //push the selected item into the array
+    //adds the selected item into the array
     favoritedShows.push(favShow);
     selectedShow.classList.add("shows-list__item--favorite");
   } else {
-    //remove selected item from the array
+    //removes selected item from the array
     favoritedShows.splice(favoriteIndex, 1);
     selectedShow.classList.remove("shows-list__item--favorite");
   }
@@ -47,7 +45,6 @@ function selectFavorites(event) {
 }
 
 // Listens to the rendered items in the results section
-
 function listenShows() {
   const showItems = document.querySelectorAll(".js-show-item");
   for (const showItem of showItems) {
