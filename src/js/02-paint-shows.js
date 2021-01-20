@@ -4,29 +4,19 @@
 const showsContainer = document.querySelector(".js-shows-container");
 const wrapperEl = document.querySelector(".page-wrapper");
 
-/*
-const handleSearch = () => {
-  if (!htmlShows) {
-    console.log("No hay nada");
-  } else {
-    paintShows();
-  }
+const handleEmptySearch = () => {
+    const newContent = document.createTextNode(
+      "First you need to write the name of a TV show :)"
+    );
+    createParagraph(newContent);
 };
-*/
 
 // Renders the tv-shows after the user's search
 const paintShows = () => {
   let htmlShows = "";
 
   if (!htmlShows) {
-    console.log("No hay nada");
-    const newParagraph = document.createElement("p");
-    const newContent = document.createTextNode(
-      "First you need to write the name of a TV show :)"
-    );
-    resultsContainer.appendChild(newParagraph);
-    newParagraph.appendChild(newContent);
-    newParagraph.classList.add("error-message");
+    handleEmptySearch(); // REVISAR: como hacer que el mensaje solo salga una vez => meter un else y relaacionarlo con paintShows
   }
 
   //loop to get the name and image of each show in the array
