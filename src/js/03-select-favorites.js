@@ -6,7 +6,7 @@ let favoritedShows = [];
 let favoritedShowsId = [];
 
 // Selects and removes favorited items
-function selectFavorites(event) {
+const selectFavorites = (event) => {
   const selectedShow = event.currentTarget;
   const selectedShowId = parseInt(selectedShow.dataset.id);
   //gets the name and image from each show in the paint-shows js file
@@ -47,7 +47,7 @@ function selectFavorites(event) {
 }
 
 // Listens to the rendered items in the results section
-function listenShows() {
+const listenShows = () => {
   const showItems = document.querySelectorAll(".js-show-item");
   for (const showItem of showItems) {
     showItem.addEventListener("click", selectFavorites);

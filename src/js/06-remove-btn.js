@@ -1,7 +1,7 @@
 //** 06 - Remove button in favorites section
 
 // Removes a favorited item using the remove button
-function removeFav(event) {
+const removeFav = (event) => {
   //checks the id of each remove button: each one has a unique id by using dataset in the html
   for (let i = 0; i < favoritedShows.length; i++) {
     const selectedFavBtn = event.currentTarget;
@@ -20,7 +20,7 @@ function removeFav(event) {
 }
 
 // Listener to remove fav items from fav section
-function listenFavs() {
+const listenFavs = () => {
   //selects all remove buttons
   const removeButtons = document.querySelectorAll(
     ".favorites-list__remove-btn"

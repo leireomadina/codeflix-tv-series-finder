@@ -5,7 +5,7 @@ const showsContainer = document.querySelector(".js-shows-container");
 const wrapperEl = document.querySelector(".page-wrapper");
 
 // Renders the tv-shows after the user's search
-function paintShows() {
+const paintShows = () => {
   let htmlShows = "";
   //loop to get the name and image of each show in the array
   for (let i = 0; i < searchedShows.length; i++) {

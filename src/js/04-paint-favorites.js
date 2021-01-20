@@ -4,7 +4,7 @@
 const favsContainer = document.querySelector(".js-favs-container");
 
 // Paints each favorited card within the favorites section
-function paintFavorites() {
+const paintFavorites = () =>{
   let htmlFavShows = "";
   //gets the name, id and image of each show in the favorite array
   for (let i = 0; i < favoritedShows.length; i++) {

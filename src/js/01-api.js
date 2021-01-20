@@ -8,7 +8,7 @@ const btn = document.querySelector(".js-btn");
 let searchedShows = [];
 
 // Fetch function to get the data from the API TVMaze
-function getData() {
+const getData = () => {
   const apiBaseUrl = "//api.tvmaze.com/search/shows?q=";
   const userSearch = searchInput.value;
   fetch(`${apiBaseUrl} + ${userSearch}`)
