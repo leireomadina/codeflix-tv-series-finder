@@ -4,9 +4,10 @@
   color: $color-main-font;
   font-size: 16px;
   border: none;
+  // border: 2px solid $color-brand;
   box-shadow: 2px 2px 2px 0px rgba(204, 204, 204, 0.5);
   cursor: pointer;
-  transition: background-color 0.3s ease-out;
+  transition: all 0.3s ease-out;
 
   &:hover {
     background-color: lighten($color-brand, 8%);
@@ -23,7 +24,7 @@
   background-color: $color-bg;
 
   &:hover {
-    background-color: lighten($color-brand, 8%);
+    background-color: $color-brand;
     color: $color-main-font;
   }
 }
