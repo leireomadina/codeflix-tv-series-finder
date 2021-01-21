@@ -33,12 +33,18 @@ const selectFavorites = (event) => {
   if (favoriteIndex === -1) {
     //adds the selected item into the array
     favoritedShows.push(favShow);
-    selectedShow.classList.add("shows-list__item--favorite");
   } else {
     //removes selected item from the array
     favoritedShows.splice(favoriteIndex, 1);
+  }
+
+  //highlights favorites shows
+  if (!selectedShow.classList.contains("shows-list__item--favorite")) {
+    selectedShow.classList.add("shows-list__item--favorite");
+  } else {
     selectedShow.classList.remove("shows-list__item--favorite");
   }
+
   paintFavorites();
   listenFavs();
   setLocalStorage();
