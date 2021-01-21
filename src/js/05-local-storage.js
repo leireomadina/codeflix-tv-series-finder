@@ -14,7 +14,7 @@ function getLocalStorage() {
     paintFavorites();
     listenShows();
   } else {
-    getData();
+    getDataFromApi();
   }
 }
 

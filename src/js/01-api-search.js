@@ -19,12 +19,12 @@ const handleSearch = () => {
 
 // Gets the data from the API TVMaze
 const getDataFromApi = () => {
-  const apiBaseUrl = "//api.tvmaze.com/search/shows?q=";
+  const endpoint = "//api.tvmaze.com/search/shows?q=";
   const userSearch = searchInput.value;
-  fetch(`${apiBaseUrl} + ${userSearch}`)
+  fetch(`${endpoint} + ${userSearch}`)
     .then((response) => response.json())
     .then(function (data) {
-      //checks if the data object is empty (no entry on database)
+      //checks if the data object is empty (not in API database)
       if (Object.entries(data).length === 0) {
         handleNotFound();
       } else {
