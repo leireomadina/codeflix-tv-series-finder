@@ -37,38 +37,44 @@ const getDataFromApi = () => {
     .catch((error) => handleServerError(error));
 };
 
+
 // Creates a paragraph using advanced DOM to show error messages
-const createParagraph = (newContent) => {
-  const newParagraph = document.createElement("p");
-  resultsContainer.appendChild(newParagraph);
-  newParagraph.appendChild(newContent);
-  newParagraph.classList.add("error-message");
-};
+// const createParagraph = (newContent) => {
+//   const newParagraph = document.createElement("p");
+//   resultsContainer.appendChild(newParagraph);
+//   newParagraph.appendChild(newContent);
+//   newParagraph.classList.add("error-message");
+// };
 
 // Shows a message when the tv show doesn't exist
 const handleNotFound = () => {
-    const newContent = document.createTextNode(
-      "Oops, that show is not on our database. Try again!"
-    );
-    createParagraph(newContent);
+  resultsContainer.innerHTML = `Oops, that show is not on our database. Try again!`;
+    // const newContent = document.createTextNode(
+    //   "Oops, that show is not on our database. Try again!"
+    // );
+    // createParagraph(newContent);
 };
 
 // Shows an error message when the server connection fails
 const handleServerError = (error) => {
   console.log("Sorry, an unexpected error has ocurred:", error);
-  const newContent = document.createTextNode(
-    "Server error: I'm sorry, please try again later."
-  );
-  createParagraph(newContent);
+  // const newContent = document.createTextNode(
+  //   "Server error: I'm sorry, please try again later."
+  // );
+  resultsContainer.innerHTML = `Server error: I'm sorry, please try again later.`;
+  // createParagraph(newContent);
 };
 
 // Shows an error message when the input is empty
 const handleEmptySearch = () => {
-  const newContent = document.createTextNode(
-    "First you need to write the name of a TV show :)"
-  );
-  createParagraph(newContent);
+  // const newContent = document.createTextNode(
+  //   "First you need to write the name of a TV show :)"
+  // );
+  // createParagraph(newContent);
+  resultsContainer.innerHTML = `<p class="">First you need to write the name of a TV show :)</p>`;
 };
 
 // Event listener
 btn.addEventListener("click", handleSearch);
+searchInput.addEventListener("keyup", handleSearch);
+
