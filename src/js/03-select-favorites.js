@@ -16,15 +16,13 @@ const selectFavorites = (event) => {
   // console.log("elemento clickado", selectedShow);
   // console.log("id del elemento clickado", selectedShowId);
 
-  // constructor object to create an object template for each favorited show
+  // object template for each favorited show
   let favShow = {
     id: selectedShowId,
     name: selectedShowName,
     image: selectedShowImage,
   };
 
-  console.log({favoritedShows});
-    
   //to get the id of each favorited show and store it in the favoritedShowsId array: we need this in order to use the indexOf and splice method later
   favoritedShowsId = favoritedShows.map(function (element) {
     return parseInt(element.id);
@@ -44,7 +42,7 @@ const selectFavorites = (event) => {
   paintFavorites();
   listenFavs();
   setLocalStorage();
-}
+};
 
 // Listens to the rendered items in the results section
 const listenShows = () => {
@@ -52,4 +50,4 @@ const listenShows = () => {
   for (const showItem of showItems) {
     showItem.addEventListener("click", selectFavorites);
   }
-}
+};
