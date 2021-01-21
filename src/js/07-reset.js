@@ -8,7 +8,9 @@ const resetFavorites = () => {
   favoritedShows = [];
   localStorage.removeItem("favoritedShows");
   paintFavorites();
+  paintShows();
   listenFavs();
+  listenShows()
 };
 
 //event
