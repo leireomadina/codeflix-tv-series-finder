@@ -4,6 +4,7 @@
 const searchInput = document.querySelector(".js-search");
 const btn = document.querySelector(".js-btn");
 const resultsContainer = document.querySelector(".js-results-container");
+const showsContainer = document.querySelector(".js-shows-container");
 
 // Array that will be filled once the api returns data after the user's search
 let searchedShows = [];
@@ -46,23 +47,22 @@ const createParagraph = (innerContent) => {
 // Shows an error message when the input is empty
 const handleEmptySearch = () => {
   createParagraph("First you need to write the name of a TV show :)");
+  showsContainer.innerHTML = "";
 };
 
 // Shows a message when the tv show doesn't exist
 const handleNotFound = () => {
   createParagraph("Oops, that show is not on our database. Try again!");
+  showsContainer.innerHTML = "";
 };
 
 // Shows an error message when the server connection fails
 const handleServerError = (error) => {
   console.log("Sorry, an unexpected error has ocurred:", error);
   createParagraph("Server error: I'm sorry, please try again later");
-};
-
-const preventSubmit = () => {
-  btn;
+  showsContainer.innerHTML = "";
 };
 
 // Event listener
- btn.addEventListener("click", handleSearch);
+btn.addEventListener("click", handleSearch);
 // searchInput.addEventListener("keyup", handleSearch);
