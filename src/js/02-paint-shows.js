@@ -28,3 +28,4 @@ const paintShows = () => {
   }
   showsContainer.innerHTML = htmlShows;
 };
+

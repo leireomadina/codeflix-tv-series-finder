@@ -30,6 +30,7 @@ const getDataFromApi = () => {
       } else {
         searchedShows = data;
         paintShows();
+        createParagraph("");
         listenShows();
         listenFavs();
       }
@@ -37,44 +38,31 @@ const getDataFromApi = () => {
     .catch((error) => handleServerError(error));
 };
 
+const createParagraph = (innerContent) => {
+  const newParagraph = `<p class="error-message">${innerContent}</p>`;
+   return resultsContainer.innerHTML = newParagraph; 
+ };
 
-// Creates a paragraph using advanced DOM to show error messages
-// const createParagraph = (newContent) => {
-//   const newParagraph = document.createElement("p");
-//   resultsContainer.appendChild(newParagraph);
-//   newParagraph.appendChild(newContent);
-//   newParagraph.classList.add("error-message");
-// };
+// Shows an error message when the input is empty
+const handleEmptySearch = () => {
+  createParagraph("First you need to write the name of a TV show :)");
+};
 
 // Shows a message when the tv show doesn't exist
 const handleNotFound = () => {
-  resultsContainer.innerHTML = `Oops, that show is not on our database. Try again!`;
-    // const newContent = document.createTextNode(
-    //   "Oops, that show is not on our database. Try again!"
-    // );
-    // createParagraph(newContent);
+  createParagraph("Oops, that show is not on our database. Try again!");
 };
 
 // Shows an error message when the server connection fails
 const handleServerError = (error) => {
   console.log("Sorry, an unexpected error has ocurred:", error);
-  // const newContent = document.createTextNode(
-  //   "Server error: I'm sorry, please try again later."
-  // );
-  resultsContainer.innerHTML = `Server error: I'm sorry, please try again later.`;
-  // createParagraph(newContent);
+  createParagraph("Server error: I'm sorry, please try again later");
 };
 
-// Shows an error message when the input is empty
-const handleEmptySearch = () => {
-  // const newContent = document.createTextNode(
-  //   "First you need to write the name of a TV show :)"
-  // );
-  // createParagraph(newContent);
-  resultsContainer.innerHTML = `<p class="">First you need to write the name of a TV show :)</p>`;
+const preventSubmit = () => {
+  btn;
 };
 
 // Event listener
-btn.addEventListener("click", handleSearch);
-searchInput.addEventListener("keyup", handleSearch);
-
+ btn.addEventListener("click", handleSearch);
+// searchInput.addEventListener("keyup", handleSearch);
