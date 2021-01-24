@@ -10,7 +10,7 @@ const wrapperEl = document.querySelector(".page-wrapper");
 // Array that will be filled once the api returns data after the user's search
 let searchedShows = [];
 
-// Checks if the user writes something in the input
+// Prevents unnecessary API calls if the input is empty
 const handleSearch = () => {
   if (searchInput.value === "") {
     handleEmptySearch();
@@ -42,35 +42,35 @@ const getDataFromApi = () => {
 
 const createParagraph = (innerContent) => {
   const newParagraph = `<p class="error-message">${innerContent}</p>`;
-   return resultsContainer.innerHTML = newParagraph; 
- };
+  return (resultsContainer.innerHTML = newParagraph);
+};
+
+// Changes the page background when message functions trigger
+const handleBackgroundImage = () => {
+  showsContainer.innerHTML = "";
+  wrapperEl.classList.remove("page-wrapper");
+  wrapperEl.classList.remove("hidden");
+  wrapperEl.classList.add("not-found");
+};
 
 // Shows an error message when the input is empty
 const handleEmptySearch = () => {
   createParagraph("First you need to write the name of a TV show :)");
-  showsContainer.innerHTML = "";
-  wrapperEl.classList.remove("page-wrapper");
-  wrapperEl.classList.remove("hidden");
-  wrapperEl.classList.add("not-found");
-
+  handleBackgroundImage();
 };
 
-// Shows a message when the tv show doesn't exist
+// Shows a message when the tv show is not on the database
 const handleNotFound = () => {
   createParagraph("Oops, that show is not on our database. Try again!");
-  showsContainer.innerHTML = "";
-  wrapperEl.classList.remove("page-wrapper");
-  wrapperEl.classList.remove("hidden");
-  wrapperEl.classList.add("not-found");
+  handleBackgroundImage();
 };
 
 // Shows an error message when the server connection fails
 const handleServerError = (error) => {
   console.log("Sorry, an unexpected error has ocurred:", error);
   createParagraph("Server error: I'm sorry, please try again later");
-  showsContainer.innerHTML = "";
+  handleBackgroundImage();
 };
 
 // Event listener
 btn.addEventListener("click", handleSearch);
-// searchInput.addEventListener("keyup", handleSearch);
