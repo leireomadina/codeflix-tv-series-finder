@@ -1,7 +1,7 @@
 //** 02 - Paint search results
 
 // HTML elements
-const wrapperEl = document.querySelector(".page-wrapper");
+// const wrapperEl = document.querySelector(".page-wrapper");
 
 // Renders the tv-shows after the user's search
 const paintShows = () => {

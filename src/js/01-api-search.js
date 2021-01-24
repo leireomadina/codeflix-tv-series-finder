@@ -5,6 +5,7 @@ const searchInput = document.querySelector(".js-search");
 const btn = document.querySelector(".js-btn");
 const resultsContainer = document.querySelector(".js-results-container");
 const showsContainer = document.querySelector(".js-shows-container");
+const wrapperEl = document.querySelector(".page-wrapper");
 
 // Array that will be filled once the api returns data after the user's search
 let searchedShows = [];
@@ -48,12 +49,19 @@ const createParagraph = (innerContent) => {
 const handleEmptySearch = () => {
   createParagraph("First you need to write the name of a TV show :)");
   showsContainer.innerHTML = "";
+  wrapperEl.classList.remove("page-wrapper");
+  wrapperEl.classList.remove("hidden");
+  wrapperEl.classList.add("not-found");
+
 };
 
 // Shows a message when the tv show doesn't exist
 const handleNotFound = () => {
   createParagraph("Oops, that show is not on our database. Try again!");
   showsContainer.innerHTML = "";
+  wrapperEl.classList.remove("page-wrapper");
+  wrapperEl.classList.remove("hidden");
+  wrapperEl.classList.add("not-found");
 };
 
 // Shows an error message when the server connection fails
