@@ -7,10 +7,12 @@ const deleteBtnEl = document.querySelector(".js-delete-btn");
 const resetFavorites = () => {
   favoritedShows = [];
   localStorage.removeItem("favoritedShows");
+  handleNoFavs();
   paintFavorites();
   paintShows();
   listenFavs();
   listenShows()
+
 };
 
 //event

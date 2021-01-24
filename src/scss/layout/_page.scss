@@ -4,9 +4,18 @@ body {
   font-family: $font-main;
 }
 
+// intial background img
 .page-wrapper {
   height: 100vh;
   background-image: url(../images/portada.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+// not found background img
+.not-found {
+  height: 100vh;
+  background-image: url(../images/notfound.png);
   background-repeat: no-repeat;
   background-position: center bottom;
 }

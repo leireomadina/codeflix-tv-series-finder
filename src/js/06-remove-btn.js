@@ -16,7 +16,8 @@ const removeFav = (event) => {
   paintFavorites();
   paintShows();
   listenFavs();
-  listenShows()
+  listenShows();
+  handleNoFavs();
 }
 
 // Listener to remove fav items from fav section
