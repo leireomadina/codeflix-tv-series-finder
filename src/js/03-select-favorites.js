@@ -1,5 +1,7 @@
 //** 03 - Select and remove favorites
 
+const noFavsContainer = document.querySelector(".js-no-favs-container");
+
 // Arrays to store favorited shows info
 let favoritedShows = [];
 // this adittional array is needed to store the id of each selected show
@@ -44,6 +46,8 @@ const selectFavorites = (event) => {
   } else {
     selectedShow.classList.remove("shows-list__item--favorite");
   }
+
+  noFavsContainer.innerHTML = "";
 
   paintFavorites();
   listenFavs();

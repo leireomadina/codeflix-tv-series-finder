@@ -2,18 +2,14 @@
 
 // HTML elements
 const favsContainer = document.querySelector(".js-favs-container");
-const noFavsContainer = document.querySelector(".js-no-favs-container");
+// const noFavsContainer = document.querySelector(".js-no-favs-container");
 
+// Shows a message if there are no favs
 const handleNoFavs = () => {
-  const paragraphEl = document.createElement("p");
-  const newText = document.createTextNode(
-    "You still don't have anything marked as favorites"
-  );
-  noFavsContainer.appendChild(paragraphEl);
-  paragraphEl.appendChild(newText);
-  paragraphEl.classList.add("no-favs-message");
+  if (favoritedShows.length === 0) {
+    noFavsContainer.innerHTML = `<p class="no-favs">You still don't have anything marked as favorites.</p>`
+  }  
 };
-// handleNoFavs();
 
 // Paints each favorited card within the favorites section
 const paintFavorites = () => {
@@ -36,5 +32,6 @@ const paintFavorites = () => {
   }
   favsContainer.innerHTML = htmlFavShows;
   //stores user's favorites in his browser
+  handleNoFavs();
   setLocalStorage();
 };
