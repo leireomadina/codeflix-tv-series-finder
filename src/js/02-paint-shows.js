@@ -1,15 +1,12 @@
 //** 02 - Paint search results
 
-// Renders the tv-shows after the user's search
 const paintShows = () => {
   let htmlShows = "";
-  //Gets the name and image of each show in the array
   for (let i = 0; i < searchedShows.length; i++) {
     const showName = searchedShows[i].show.name;
-    //finds the API id of each show (unique element)
     const searchedShowId = searchedShows[i].show.id;
     htmlShows += `<li class="shows-list__item js-show-item" data-id="${searchedShowId}">`;
-    //this conditional statements are needed because there are some shows that have no image in the API data
+    // Not all API shows have image
     if (searchedShows[i].show.image != null) {
       let imgURL = searchedShows[i].show.image.original;
       htmlShows += `<img src="${imgURL}" alt="Imagen de la serie ${showName}" class="shows-list__img" title="Imagen de la serie ${showName}"></img>`;
@@ -19,7 +16,7 @@ const paintShows = () => {
     }
     htmlShows += `<h3 class="shows-list__title">${showName}</h3>`;
     htmlShows += `</li>`;
-    //removes the background hitchcock image before the show cards render
+    // Removes the background hitchcock image before the cards render
     wrapperEl.classList.add("hidden");
   }
   showsContainer.innerHTML = htmlShows;

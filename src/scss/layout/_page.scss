@@ -4,7 +4,7 @@ body {
   font-family: $font-main;
 }
 
-// intial background img
+// Intial background image
 .page-wrapper {
   height: 100vh;
   background-image: url(../images/portada.png);
@@ -12,7 +12,6 @@ body {
   background-position: center bottom;
 }
 
-// not found background img
 .not-found {
   height: 100vh;
   background-image: url(../images/notfound.png);
@@ -20,7 +19,7 @@ body {
   background-position: center bottom;
 }
 
-// to hide the background img when results get rendered
+// Hides the background image when results get rendered
 .hidden {
   background-image: none;
 }
