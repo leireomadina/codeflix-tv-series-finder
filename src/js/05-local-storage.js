@@ -13,8 +13,6 @@ function getLocalStorage() {
     favoritedShows = localFavsJson;
     paintFavorites();
     listenShows();
-  } else {
-    getDataFromApi();
   }
 }
 
