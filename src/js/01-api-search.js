@@ -25,7 +25,7 @@ const getDataFromApi = () => {
   const userSearch = searchInput.value;
   fetch(`${endpoint} + ${userSearch}`)
     .then((response) => response.json())
-    .then(function (data) {
+    .then((data) => {
       //checks if the data object is empty (not in API database)
       if (Object.entries(data).length === 0) {
         handleNotFound();

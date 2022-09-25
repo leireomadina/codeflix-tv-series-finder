@@ -6,7 +6,7 @@ const paintShows = () => {
   //Gets the name and image of each show in the array
   for (let i = 0; i < searchedShows.length; i++) {
     const showName = searchedShows[i].show.name;
-    //finds the API id of each show: unique element in order to identify each show
+    //finds the API id of each show (unique element)
     const searchedShowId = searchedShows[i].show.id;
     htmlShows += `<li class="shows-list__item js-show-item" data-id="${searchedShowId}">`;
     //this conditional statements are needed because there are some shows that have no image in the API data
