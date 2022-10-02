@@ -3,6 +3,7 @@
 const searchInput = document.querySelector(".js-search");
 const btn = document.querySelector(".js-btn");
 const resultsContainer = document.querySelector(".js-results-container");
+const tipsContainer = document.querySelector(".js-tips-container");
 const showsContainer = document.querySelector(".js-shows-container");
 const wrapperEl = document.querySelector(".page-wrapper");
 
@@ -28,6 +29,10 @@ const getDataFromApi = () => {
         handleNotFound();
       } else {
         searchedShows = data;
+        resultsContainer.classList.add('hide');
+        tipsContainer.classList.remove('hide');
+        tipsContainer.innerHTML = '<p>Select a TV show to add it as favorite:</p>';
+        createParagraph("First you need to write the name of a TV show :)");
         paintShows();
         createParagraph("");
         listenShows();
@@ -45,21 +50,24 @@ const createParagraph = (innerContent) => {
 const handleBackgroundImage = () => {
   showsContainer.innerHTML = "";
   wrapperEl.classList.remove("page-wrapper");
-  wrapperEl.classList.remove("hidden");
+  wrapperEl.classList.remove("hidden-bg");
   wrapperEl.classList.add("not-found");
 };
 
 const handleEmptySearch = () => {
+  resultsContainer.classList.remove('hide');
   createParagraph("First you need to write the name of a TV show :)");
   handleBackgroundImage();
 };
 
 const handleNotFound = () => {
+  resultsContainer.classList.remove('hide');
   createParagraph("Oops, that show is not on our database. Try again!");
   handleBackgroundImage();
 };
 
 const handleServerError = (error) => {
+  resultsContainer.classList.remove('hide');
   console.log("Sorry, an unexpected error has ocurred:", error);
   createParagraph("Server error: I'm sorry, please try again later");
   handleBackgroundImage();
