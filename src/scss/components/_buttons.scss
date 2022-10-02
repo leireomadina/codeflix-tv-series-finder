@@ -1,15 +1,19 @@
 .btn {
-  height: 40px;
-  padding: 10px;
-  color: $color-main-font;
-  font-size: 16px;
+  display: block;
+  width: 100%;
+  max-width: 30rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5rem 1rem;
+  color: $color-light;
+  font-size: $font-size;
   border: none;
-  box-shadow: 2px 2px 2px 0px rgba(204, 204, 204, 0.5);
+  box-shadow: 2px 2px 2px 0px $color-shadow;
   cursor: pointer;
   transition: all 0.3s ease-out;
 
   &:hover {
-    background-color: lighten($color-brand, 8%);
+    background-color: lighten($color-brand, 12%);
   }
 } 
 
@@ -24,6 +28,6 @@
 
   &:hover {
     background-color: $color-brand;
-    color: $color-main-font;
+    color: $color-light;
   }
 }

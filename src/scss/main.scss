@@ -1,5 +1,10 @@
-@import 'core/variables';
+// Core
+@import 'core/mixins';
+@import 'core/normalize';
 @import 'core/reset';
+@import 'core/variables';
+
+// Layouts
 @import 'layout/page';
 @import 'layout/header';
 @import 'layout/main';
@@ -7,6 +12,8 @@
 @import 'layout/search-section';
 @import 'layout/results-section';
 @import 'layout/favorites-section';
+
+// Components
 @import 'components/buttons';
 
 
