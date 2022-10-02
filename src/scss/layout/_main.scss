@@ -1,7 +1,11 @@
 .main {
-  display: grid;
-  grid-template-columns: minmax(250px, auto) 1fr;
-  grid-template-rows: 120px 1fr;
+  flex-grow: 1;
+
+  @include medium {
+    display: grid;
+    grid-template-columns: minmax(250px, auto) 1fr;
+    grid-template-rows: 120px 1fr;
+  }
 }
 
 

@@ -1,15 +1,27 @@
 body {
-  height: 100vh;
   background-color: $color-bg;
   font-family: $font-main;
+  line-height: $line-height;
+  $font-size: $font-size;
+  color: $color-dark;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 // Intial background image
 .page-wrapper {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   background-image: url(../images/portada.png);
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: center 200%;
+
+  @include medium {
+    background-position: center bottom;
+  }
 }
 
 .not-found {
@@ -19,7 +31,10 @@ body {
   background-position: center bottom;
 }
 
+.hide {
+  display: none;
+}
 // Hides the background image when results get rendered
-.hidden {
+.hidden-bg {
   background-image: none;
 }

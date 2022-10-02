@@ -1,16 +1,17 @@
 .header {
   width: 100%;
+  padding: 1rem;
   background-color: $color-bg-secondary;
-  padding: 25px 50px;
-  color: $color-main-font;
+  color: $color-light;
   text-align: center;
-
-  &__title{
-    font-size: 35px;
-  }
+  flex-shrink: 0;
 
   &__image {
-    height: 70px;
+    max-height: 70px;
     width: auto;
+
+    @include large {
+      max-height: initial;
+    }
   }
 }

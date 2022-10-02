@@ -1,9 +1,17 @@
 // Footer section
 
 .footer {
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
   width: 100%;
-  padding: 15px 25px;
+  flex-shrink: 0;
+  padding: 1rem 1.5rem;
+
+  &__text {
+    color: $color-light;
+    mix-blend-mode: difference;
+
+    @include medium {
+      color: unset;
+      mix-blend-mode: unset;
+    }
+  }
 }
