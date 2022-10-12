@@ -1,7 +1,7 @@
 //** 01 - API
 
 const searchInput = document.querySelector(".js-search");
-const btn = document.querySelector(".js-btn");
+const buttonEl = document.querySelector(".js-btn");
 const resultsContainer = document.querySelector(".js-results-container");
 const tipsContainer = document.querySelector(".js-tips-container");
 const showsContainer = document.querySelector(".js-shows-container");
@@ -19,27 +19,31 @@ const handleSearch = () => {
 };
 
 // TVMaze API connection
-const getDataFromApi = () => {
-  const endpoint = "//api.tvmaze.com/search/shows?q=";
+const getDataFromApi = async() => {
+  const ENDPOINT = "//api.tvmaze.com/search/shows?q=";
   const userSearch = searchInput.value;
-  fetch(`${endpoint} + ${userSearch}`)
-    .then((response) => response.json())
-    .then((data) => {
-      if (Object.entries(data).length === 0) {
-        handleNotFound();
-      } else {
-        searchedShows = data;
-        resultsContainer.classList.add('hide');
-        tipsContainer.classList.remove('hide');
-        tipsContainer.innerHTML = '<p>Select a TV show to add it as favorite:</p>';
-        createParagraph("First you need to write the name of a TV show :)");
-        paintShows();
-        createParagraph("");
-        listenShows();
-        listenFavs();
-      }
-    })
-    .catch((error) => handleServerError(error));
+
+  try {
+    const resp = await fetch(`${ENDPOINT} + ${userSearch}`);
+    if(!resp.ok) throw "Im sorry, there has been a server error. Try again later!";
+    const data = await resp.json();
+    if (Object.entries(data).length === 0) {
+      handleNotFound();
+    } else {
+      searchedShows = data;
+      resultsContainer.classList.add('hide');
+      tipsContainer.classList.remove('hide');
+      tipsContainer.innerHTML = '<p>Select a TV show to add it as favorite:</p>';
+      createParagraph("First you need to write the name of a TV show :)");
+      paintShows();
+      createParagraph("");
+      listenShows();
+      listenFavs();
+    }
+  } catch (error) {
+    handleServerError(error);
+  }
+
 };
 
 const createParagraph = (innerContent) => {
@@ -68,9 +72,8 @@ const handleNotFound = () => {
 
 const handleServerError = (error) => {
   resultsContainer.classList.remove('hide');
-  console.log("Sorry, an unexpected error has ocurred:", error);
-  createParagraph("Server error: I'm sorry, please try again later");
+  createParagraph("Im sorry, there has been a server error. Try again later!");
   handleBackgroundImage();
 };
 
-btn.addEventListener("click", handleSearch);
+buttonEl.addEventListener("click", handleSearch);
