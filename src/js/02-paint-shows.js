@@ -1,24 +1,36 @@
 //** 02 - Paint search results
 
 const paintShows = () => {
-  let htmlShows = "";
-  for (let i = 0; i < searchedShows.length; i++) {
-    const showName = searchedShows[i].show.name;
-    const searchedShowId = searchedShows[i].show.id;
-    htmlShows += `<li class="shows-list__item js-show-item" data-id="${searchedShowId}">`;
-    // Not all API shows have image
-    if (searchedShows[i].show.image != null) {
-      let imgURL = searchedShows[i].show.image.original;
-      htmlShows += `<img src="${imgURL}" alt="Imagen de la serie ${showName}" class="shows-list__img" title="Imagen de la serie ${showName}"></img>`;
-    } else {
-      imgURL = "./assets/images/nopicture.png";
-      htmlShows += `<img src="${imgURL}" alt="Imagen de la serie ${showName}" class="shows-list__img">`;
-    }
-    htmlShows += `<h3 class="shows-list__title">${showName}</h3>`;
-    htmlShows += `</li>`;
-    // Removes the background hitchcock image before the cards render
-    pageWrapper.classList.add("hidden-bg");
-  }
-  showsContainer.innerHTML = htmlShows;
-};
+	for (let i = 0; i < searchedShows.length; i++) {
+		const showName = searchedShows[i].show.name;
+		const showId = searchedShows[i].show.id;
+		const showImage = searchedShows[i].show.image;
 
+		const liElement = document.createElement('li');
+		const imgElement = document.createElement('img');
+		const h3Element = document.createElement('h3');
+		const showNameContent = document.createTextNode(showName);
+
+		liElement.classList.add('shows-list__item', 'js-show-item');
+		liElement.setAttribute('data-id', showId);
+		liElement.appendChild(imgElement);
+		liElement.appendChild(h3Element);
+
+		// Not all API shows have image
+		imgElement.classList.add('shows-list__img');
+		if (showImage != null) {
+			imgElement.src = searchedShows[i].show.image.original;
+			imgElement.setAttribute('alt', `${showName} TV show image`);
+		} else {
+			imgElement.src = './assets/images/nopicture.png';
+			imgElement.setAttribute('alt', 'This TV show has no image');
+		}
+
+		h3Element.classList.add('shows-list__title');
+		h3Element.appendChild(showNameContent);
+
+		pageWrapper.classList.add('hidden-bg');
+
+		showsContainer.appendChild(liElement);
+	}
+};
