@@ -1,14 +1,5 @@
 //** 01 - API
 
-const searchInput = document.querySelector(".js-search");
-const buttonEl = document.querySelector(".js-btn");
-const resultsContainer = document.querySelector(".js-results-container");
-const tipsContainer = document.querySelector(".js-tips-container");
-const showsContainer = document.querySelector(".js-shows-container");
-const wrapperEl = document.querySelector(".page-wrapper");
-
-let searchedShows = [];
-
 // Prevents unnecessary API requests
 const handleSearch = () => {
   if (searchInput.value === "") {
@@ -53,9 +44,9 @@ const createParagraph = (innerContent) => {
 
 const handleBackgroundImage = () => {
   showsContainer.innerHTML = "";
-  wrapperEl.classList.remove("page-wrapper");
-  wrapperEl.classList.remove("hidden-bg");
-  wrapperEl.classList.add("not-found");
+  pageWrapper.classList.remove("page-wrapper");
+  pageWrapper.classList.remove("hidden-bg");
+  pageWrapper.classList.add("not-found");
 };
 
 const handleEmptySearch = () => {
@@ -76,4 +67,4 @@ const handleServerError = (error) => {
   handleBackgroundImage();
 };
 
-buttonEl.addEventListener("click", handleSearch);
+searchButton.addEventListener("click", handleSearch);

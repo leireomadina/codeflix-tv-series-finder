@@ -1,7 +1,5 @@
 //** 07 - Remove all favorited shows
 
-const deleteBtnEl = document.querySelector(".js-delete-btn");
-
 const resetFavorites = () => {
   favoritedShows = [];
   localStorage.removeItem("favoritedShows");
@@ -12,4 +10,4 @@ const resetFavorites = () => {
   listenShows();
 };
 
-deleteBtnEl.addEventListener("click", resetFavorites);
+deleteButton.addEventListener("click", resetFavorites);

@@ -17,7 +17,7 @@ const paintShows = () => {
     htmlShows += `<h3 class="shows-list__title">${showName}</h3>`;
     htmlShows += `</li>`;
     // Removes the background hitchcock image before the cards render
-    wrapperEl.classList.add("hidden-bg");
+    pageWrapper.classList.add("hidden-bg");
   }
   showsContainer.innerHTML = htmlShows;
 };

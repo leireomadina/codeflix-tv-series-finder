@@ -1,6 +1,5 @@
 //** 04 - Paint favorites
 
-const favsContainer = document.querySelector('.js-favs-container');
 
 const handleNoFavs = () => {
 	if (favoritedShows.length === 0) {

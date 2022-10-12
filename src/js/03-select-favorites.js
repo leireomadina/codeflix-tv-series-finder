@@ -1,11 +1,5 @@
 //** 03 - Select and remove favorites
 
-const noFavsContainer = document.querySelector('.js-no-favs-container');
-
-let favoritedShows = [];
-// Adittional array to store the id of each selected show
-let favoritedShowsId = [];
-
 const selectFavorites = (event) => {
 	const selectedShow = event.currentTarget;
 	const selectedShowId = parseInt(selectedShow.dataset.id);
