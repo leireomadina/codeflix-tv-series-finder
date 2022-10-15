@@ -82,4 +82,13 @@ const handleServerError = (error) => {
 	handleBackgroundImage();
 };
 
+const handleEnterKeySearch = (event) => {
+	if(event.key === 'Enter') {
+		event.preventDefault();
+		handleSearch();
+	}
+}
+
 searchButton.addEventListener('click', handleSearch);
+searchInput.addEventListener('keypress', handleEnterKeySearch);
+
