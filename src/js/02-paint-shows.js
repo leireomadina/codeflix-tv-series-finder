@@ -13,7 +13,6 @@ const paintShows = () => {
 		const h3Element = document.createElement('h3');
 		const showNameContent = document.createTextNode(showName);
 
-
 		liElement.classList.add('shows-list__item', 'js-show-item');
 		liElement.setAttribute('data-id', showId);
 		liElement.appendChild(imgElement);
@@ -22,7 +21,7 @@ const paintShows = () => {
 		// Not all API shows have image
 		imgElement.classList.add('shows-list__img');
 		if (showImage != null) {
-			imgElement.src = searchedShows[i].show.image.original;
+			imgElement.src = searchedShows[i].show.image.medium;
 			imgElement.setAttribute('alt', `${showName} TV show image`);
 		} else {
 			imgElement.src = './assets/images/nopicture.png';

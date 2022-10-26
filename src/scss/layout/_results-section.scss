@@ -24,6 +24,9 @@
     box-shadow: 3px 3px 3px 0px $color-shadow;
     transition: all 0.3s ease-out;
 
+    &:hover {
+      cursor: pointer;
+    }
 
     // favorited class added with JS
     &--favorite {
