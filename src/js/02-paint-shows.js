@@ -1,6 +1,8 @@
 //** 02 - Paint search results
 
 const paintShows = () => {
+	showsContainer.innerHTML = '';
+	
 	for (let i = 0; i < searchedShows.length; i++) {
 		const showName = searchedShows[i].show.name;
 		const showId = searchedShows[i].show.id;
@@ -10,6 +12,7 @@ const paintShows = () => {
 		const imgElement = document.createElement('img');
 		const h3Element = document.createElement('h3');
 		const showNameContent = document.createTextNode(showName);
+
 
 		liElement.classList.add('shows-list__item', 'js-show-item');
 		liElement.setAttribute('data-id', showId);
