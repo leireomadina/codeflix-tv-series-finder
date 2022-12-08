@@ -1,7 +1,11 @@
 // Results section
 
 .results-section {
-  padding: 30px 20px;
+  padding: 2rem 1.25rem;
+
+  &__tips {
+    padding-bottom: 1.25rem;
+  }
 }
 
 .shows-list {
@@ -12,39 +16,47 @@
   align-items: center;
 
   &__item {
-    background-color: white;
-    margin-bottom: 20px;
-    margin-right: 20px;
-    padding: 20px;
+    background-color: $color-light;
+    margin-bottom: 1.25rem;
+    margin-right: 1.25rem;
+    padding: 1.25rem;
     text-align: center;
-    box-shadow: 3px 3px 3px 0px rgba(204, 204, 204, 0.5);
+    box-shadow: 3px 3px 3px 0px $color-shadow;
     transition: all 0.3s ease-out;
 
+    &:hover {
+      cursor: pointer;
+    }
 
     // favorited class added with JS
     &--favorite {
       background-color: $color-brand;
-      color: white;
+      color: $color-light;
       border: 3px solid $color-brand;
     }
   }
 
   &__img {
-    height: 250px;
-    max-width: 204px;
+    aspect-ratio: 1;
+    max-height: 180px;
+
+    @include large {
+      max-height: 250px;
+    }
   }
 
   &__title {
-    padding-top: 10px;
+    font-size: $font-size;
+    padding-top: 0.75rem;
   }
 }
 
 .error-message {
-  padding: 20px 0;
+  padding: 1.25rem 0;
   color: $color-brand;
 }
 
 .no-favs {
-  padding: 20px 0;
+  padding-bottom: 1.25rem;
 }
 

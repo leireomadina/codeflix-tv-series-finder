@@ -1,76 +1,94 @@
 //** 01 - API
 
-// HTML elements
-const searchInput = document.querySelector(".js-search");
-const btn = document.querySelector(".js-btn");
-const resultsContainer = document.querySelector(".js-results-container");
-const showsContainer = document.querySelector(".js-shows-container");
-const wrapperEl = document.querySelector(".page-wrapper");
-
-// Array that will be filled once the api returns data after the user's search
-let searchedShows = [];
-
-// Prevents unnecessary API calls if the input is empty
+// Prevents unnecessary API requests
 const handleSearch = () => {
-  if (searchInput.value === "") {
-    handleEmptySearch();
-  } else {
-    getDataFromApi();
-  }
+	if (searchInput.value === '') {
+		handleEmptySearch();
+	} else {
+		getDataFromApi();
+	}
 };
 
-// Gets the data from the API TVMaze
-const getDataFromApi = () => {
-  const endpoint = "//api.tvmaze.com/search/shows?q=";
-  const userSearch = searchInput.value;
-  fetch(`${endpoint} + ${userSearch}`)
-    .then((response) => response.json())
-    .then(function (data) {
-      //checks if the data object is empty (not in API database)
-      if (Object.entries(data).length === 0) {
-        handleNotFound();
-      } else {
-        searchedShows = data;
-        paintShows();
-        createParagraph("");
-        listenShows();
-        listenFavs();
-      }
-    })
-    .catch((error) => handleServerError(error));
+// TVMaze API connection
+const getDataFromApi = async () => {
+	const ENDPOINT = '//api.tvmaze.com/search/shows?q=';
+	const userSearch = searchInput.value;
+
+	try {
+		const resp = await fetch(`${ENDPOINT} + ${userSearch}`);
+		if (!resp.ok)
+			throw 'Im sorry, there has been a server error. Try again later!';
+		const data = await resp.json();
+		if (Object.entries(data).length === 0) {
+			handleNotFound();
+		} else {
+			searchedShows = data;
+			resultsContainer.classList.add('hide');
+			tipsContainer.classList.remove('hide');
+			createParagraph(
+				'Select a TV show to add it as favorite:)',
+				tipsContainer
+			);
+			createParagraph(
+				'First you need to write the name of a TV show :)',
+				resultsContainer
+			);
+			createParagraph('', resultsContainer);
+			paintShows();
+			listenShows();
+			listenFavs();
+		}
+	} catch (error) {
+		handleServerError(error);
+	}
 };
 
-const createParagraph = (innerContent) => {
-  const newParagraph = `<p class="error-message">${innerContent}</p>`;
-  return (resultsContainer.innerHTML = newParagraph);
+const createParagraph = (innerContent, outerContainer) => {
+	const newParagraph = `<p class="error-message">${innerContent}</p>`;
+	return (outerContainer.innerHTML = newParagraph);
 };
 
-// Changes the page background when message functions trigger
 const handleBackgroundImage = () => {
-  showsContainer.innerHTML = "";
-  wrapperEl.classList.remove("page-wrapper");
-  wrapperEl.classList.remove("hidden");
-  wrapperEl.classList.add("not-found");
+	showsContainer.innerHTML = '';
+	pageWrapper.classList.remove('page-wrapper');
+	pageWrapper.classList.remove('hidden-bg');
+	pageWrapper.classList.add('not-found');
 };
 
-// Shows an error message when the input is empty
 const handleEmptySearch = () => {
-  createParagraph("First you need to write the name of a TV show :)");
-  handleBackgroundImage();
+	resultsContainer.classList.remove('hide');
+	createParagraph(
+		'First you need to write the name of a TV show :)',
+		resultsContainer
+	);
+	handleBackgroundImage();
 };
 
-// Shows a message when the tv show is not on the database
 const handleNotFound = () => {
-  createParagraph("Oops, that show is not on our database. Try again!");
-  handleBackgroundImage();
+	resultsContainer.classList.remove('hide');
+	createParagraph(
+		'Oops, that show is not on our database. Try again!',
+		resultsContainer
+	);
+	handleBackgroundImage();
 };
 
-// Shows an error message when the server connection fails
 const handleServerError = (error) => {
-  console.log("Sorry, an unexpected error has ocurred:", error);
-  createParagraph("Server error: I'm sorry, please try again later");
-  handleBackgroundImage();
+	resultsContainer.classList.remove('hide');
+	createParagraph(
+		'Im sorry, there has been a server error. Try again later!',
+		resultsContainer
+	);
+	handleBackgroundImage();
 };
 
-// Event listener
-btn.addEventListener("click", handleSearch);
+const handleEnterKeySearch = (event) => {
+	if(event.key === 'Enter') {
+		event.preventDefault();
+		handleSearch();
+	}
+}
+
+searchButton.addEventListener('click', handleSearch);
+searchInput.addEventListener('keypress', handleEnterKeySearch);
+

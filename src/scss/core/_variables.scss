@@ -1,10 +1,22 @@
-// Fonts
+// TYPOGRAPHY
 $font-main: 'Roboto', sans-serif;
+$font-secondary: 'Arial', sans-serif;
+$font-size: 1rem;
+$font-size-titles: 2rem;
+$line-height: 1.6;
+$line-height-titles: 1.5;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
 
-// Colors
+// COLORS
+// Brand colors
 $color-brand: #ff004f;
 $color-brand-secondary: #f15496;
+// Neutral colors
+$color-dark: #000;
+$color-light: #fff;
+$color-grey: #999;
+$color-shadow: rgba(204, 204, 204, 0.5);
+// Background colors
 $color-bg: #f6f7f8;
 $color-bg-secondary:  rgb(26, 26, 26);
-$color-secondary: #999;
-$color-main-font: #fff;

@@ -2,11 +2,16 @@
 
 .favorites-section {
   min-width: 250px;
-  padding: 20px 20px 0 30px;
+  padding: 1.25rem 1.25rem 0 2rem;
+
+  @include medium {
+    display: block;
+    padding: 2.5rem;
+  }
 
   &__title {
-    font-size: 22px;
-    margin-bottom: 25px;
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
   }
 }
 
@@ -16,44 +21,43 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 10px;
-    padding-bottom: 15px;
+    margin-bottom: 0.75rem;
+    padding-bottom: 1rem;
   }
 
   &__img {
-    height: 120px;
     max-width: 82px;
   }
 
   &__title{
-    font-size: 16px;
-    padding-left: 15px;
+    font-size: $font-size;
+    padding-left: 1rem;
     font-weight: bold;
   }
 
   &__remove-btn {
-    height: 20px;
-    width: 20px;
-    margin-left: 15px;
+    height: 1.25rem;
+    width: 1.25rem;
+    margin-left: 1rem;
     justify-self: left;
     background-color: $color-brand;
-    color: $color-main-font;
-    font-size: 16px;
+    color: $color-light;
+    font-size: $font-size;
     border: none;
     border-radius: 50%;
-    box-shadow: 2px 2px 2px 0px rgba(204, 204, 204, 0.5);
+    box-shadow: 2px 2px 2px 0px $color-shadow;
     cursor: pointer;
     transition: background-color 0.3s ease-out;
     text-align: center;
-    box-shadow: 2px 2px 2px 0px rgba(204, 204, 204, 0.5);
+    box-shadow: 2px 2px 2px 0px $color-shadow;
 
     &:hover {
-      background-color: lighten($color-brand, 8%);
+      background-color: lighten($color-brand, 12%);
     } 
   }
 }
 
 .no-favs-message {
-  padding-bottom: 20px;
+  padding-bottom: 1.25rem;
   color: $color-brand;
 }
